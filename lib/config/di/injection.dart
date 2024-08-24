@@ -6,18 +6,8 @@ import 'injection.config.dart';
 GetIt getIt = GetIt.instance;
 
 @InjectableInit(
-  // externalPackageModulesBefore: [
-  //   ExternalModule(AgoraCorePackageModule),
-  //   ExternalModule(AgoraWidgetsPackageModule),
-  // ],
+  initializerName: 'init',
+  preferRelativeImports: true,
+  asExtension: true,
 )
-GetIt configInjector(
-  GetIt getIt, {
-  String? env,
-  EnvironmentFilter? environmentFilter,
-}) {
-  return getIt.init(
-    environmentFilter: environmentFilter,
-    environment: env,
-  );
-}
+void configureDependencies() => getIt.init();

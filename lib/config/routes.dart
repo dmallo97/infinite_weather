@@ -32,26 +32,50 @@ final routes = <RouteBase>[
         branches: [
           StatefulShellBranch(
             navigatorKey: _locationsNavigatorKey,
-            routes: [],
+            initialLocation: '/locations',
+            routes: [
+              GoRoute(
+                path: '/locations',
+                name: Routes.locations,
+                pageBuilder: (context, state) {
+                  return NoTransitionPage(child: child);
+                },
+              ),
+              GoRoute(
+                path: '/location-details',
+                name: Routes.locationDetails,
+                pageBuilder: (context, state) {
+                  return NoTransitionPage(child: child);
+                },
+              ),
+            ],
           ),
           StatefulShellBranch(
             navigatorKey: _summaryNavigatorKey,
-            routes: [],
+            initialLocation: '/summary',
+            routes: [
+              GoRoute(
+                path: '/summary',
+                name: Routes.summary,
+                pageBuilder: (context, state) {
+                  return NoTransitionPage(child: child);
+                },
+              )
+            ],
           ),
         ],
-        navigatorContainerBuilder: (context, navigationShell, children) {
-          return NavBarContainer(navigationShell: navigationShell, children: children);
-        },
+        navigatorContainerBuilder: (context, navigationShell, children) =>
+            NavBarContainer(navigationShell: navigationShell, children: children),
       ),
-      GoRoute(
-        parentNavigatorKey: _mainNavigatorKey,
-        path: '/location-details',
-        name: Routes.locationDetails,
-        pageBuilder: (context, state) {
-          //state.syncAppBar(context);
-          return NoTransitionPage(child: Container());
-        },
-      ),
+      // GoRoute(
+      //   parentNavigatorKey: _mainNavigatorKey,
+      //   path: '/location-details',
+      //   name: Routes.locationDetails,
+      //   pageBuilder: (context, state) {
+      //     //state.syncAppBar(context);
+      //     return NoTransitionPage(child: Container());
+      //   },
+      // ),
     ],
   ),
 ];

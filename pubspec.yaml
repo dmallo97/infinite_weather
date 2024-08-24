@@ -49,6 +49,7 @@ dependencies:
   cached_network_image: 
   flutter_cache_manager: 
   connectivity_plus: 
+  geolocator: 
 
 dev_dependencies:
   flutter_test:
