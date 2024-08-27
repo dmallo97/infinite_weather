@@ -19,21 +19,26 @@ class SummaryPage extends StatelessWidget {
         builder: (context, state) {
           return state.fetchCurrentLocationWeather.maybeWhen(
             data: (data) {
-              return CustomScrollView(
-                shrinkWrap: true,
-                slivers: [
-                  SliverAppBar(
-                    title: Text(data.location),
-                  ),
-                  SliverFillRemaining(
-                    child: Column(
-                      children: [
-                        CurrentConditions(weatherConditions: data),
-                        //SixHourForecastCard(),
-                      ],
+              return RefreshIndicator(
+                onRefresh: () async {
+                  getIt<SummaryBloc>().add(const SummaryEvent.fetchCurrentWeather());
+                },
+                child: CustomScrollView(
+                  shrinkWrap: true,
+                  slivers: [
+                    SliverAppBar(
+                      title: Text(data.location),
                     ),
-                  ),
-                ],
+                    SliverFillRemaining(
+                      child: Column(
+                        children: [
+                          CurrentConditions(weatherConditions: data),
+                          //SixHourForecastCard(),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               );
             },
             orElse: () {
