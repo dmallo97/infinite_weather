@@ -27,7 +27,7 @@ class SummaryPage extends StatelessWidget {
                   shrinkWrap: true,
                   slivers: [
                     SliverAppBar(
-                      title: Text(data.location),
+                      title: Text(data.location!),
                     ),
                     SliverFillRemaining(
                       child: Column(

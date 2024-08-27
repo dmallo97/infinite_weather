@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:infinite_weather/features/location/data/dto/location_metadata_response.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -11,7 +12,7 @@ abstract class AccuWeatherLocationService {
   factory AccuWeatherLocationService(@Named('accuWeatherDataService') Dio dio) = _AccuWeatherLocationService;
 
   @GET('locations/v1/cities/geoposition/search')
-  Future<dynamic> fetchLocationKeyWithCoords({
+  Future<LocationMetadataResponse> fetchLocationKeyWithCoords({
     @Query('q') required String latitudeLongitude,
     @Query('language') String? language,
     @Query('details') bool? fullDetails,
@@ -19,10 +20,10 @@ abstract class AccuWeatherLocationService {
   });
 
   @GET('locations/v1/search')
-  Future<dynamic> fetchLocationKeyWithTextSearch({
+  Future<List<LocationMetadataResponse>> fetchLocationKeyWithTextSearch({
     @Query('q') required String text,
     @Query('language') String? language,
     @Query('details') bool? fullDetails,
-    @Query('offset') int? topLevel,
+    @Query('offset') int offset = 0,
   });
 }

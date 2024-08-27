@@ -16,10 +16,18 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$WeatherConditionsModel {
-  String get location => throw _privateConstructorUsedError;
+  String? get location => throw _privateConstructorUsedError;
   WeatherCondition get weatherCondition => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
+  bool get isDayTime => throw _privateConstructorUsedError;
   num? get temperature => throw _privateConstructorUsedError;
+  num? get feelsLike => throw _privateConstructorUsedError;
+  num? get windSpeed => throw _privateConstructorUsedError;
+  num? get windGusts => throw _privateConstructorUsedError;
+  String? get windDirection => throw _privateConstructorUsedError;
+  int? get uvIndex => throw _privateConstructorUsedError;
+  String? get uvIndexLabel => throw _privateConstructorUsedError;
+  num? get visibility => throw _privateConstructorUsedError;
   num? get humidity => throw _privateConstructorUsedError;
   num? get rainProbability => throw _privateConstructorUsedError;
 
@@ -35,10 +43,18 @@ abstract class $WeatherConditionsModelCopyWith<$Res> {
       _$WeatherConditionsModelCopyWithImpl<$Res, WeatherConditionsModel>;
   @useResult
   $Res call(
-      {String location,
+      {String? location,
       WeatherCondition weatherCondition,
       String description,
+      bool isDayTime,
       num? temperature,
+      num? feelsLike,
+      num? windSpeed,
+      num? windGusts,
+      String? windDirection,
+      int? uvIndex,
+      String? uvIndexLabel,
+      num? visibility,
       num? humidity,
       num? rainProbability});
 }
@@ -57,18 +73,26 @@ class _$WeatherConditionsModelCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? location = null,
+    Object? location = freezed,
     Object? weatherCondition = null,
     Object? description = null,
+    Object? isDayTime = null,
     Object? temperature = freezed,
+    Object? feelsLike = freezed,
+    Object? windSpeed = freezed,
+    Object? windGusts = freezed,
+    Object? windDirection = freezed,
+    Object? uvIndex = freezed,
+    Object? uvIndexLabel = freezed,
+    Object? visibility = freezed,
     Object? humidity = freezed,
     Object? rainProbability = freezed,
   }) {
     return _then(_value.copyWith(
-      location: null == location
+      location: freezed == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       weatherCondition: null == weatherCondition
           ? _value.weatherCondition
           : weatherCondition // ignore: cast_nullable_to_non_nullable
@@ -77,9 +101,41 @@ class _$WeatherConditionsModelCopyWithImpl<$Res,
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
+      isDayTime: null == isDayTime
+          ? _value.isDayTime
+          : isDayTime // ignore: cast_nullable_to_non_nullable
+              as bool,
       temperature: freezed == temperature
           ? _value.temperature
           : temperature // ignore: cast_nullable_to_non_nullable
+              as num?,
+      feelsLike: freezed == feelsLike
+          ? _value.feelsLike
+          : feelsLike // ignore: cast_nullable_to_non_nullable
+              as num?,
+      windSpeed: freezed == windSpeed
+          ? _value.windSpeed
+          : windSpeed // ignore: cast_nullable_to_non_nullable
+              as num?,
+      windGusts: freezed == windGusts
+          ? _value.windGusts
+          : windGusts // ignore: cast_nullable_to_non_nullable
+              as num?,
+      windDirection: freezed == windDirection
+          ? _value.windDirection
+          : windDirection // ignore: cast_nullable_to_non_nullable
+              as String?,
+      uvIndex: freezed == uvIndex
+          ? _value.uvIndex
+          : uvIndex // ignore: cast_nullable_to_non_nullable
+              as int?,
+      uvIndexLabel: freezed == uvIndexLabel
+          ? _value.uvIndexLabel
+          : uvIndexLabel // ignore: cast_nullable_to_non_nullable
+              as String?,
+      visibility: freezed == visibility
+          ? _value.visibility
+          : visibility // ignore: cast_nullable_to_non_nullable
               as num?,
       humidity: freezed == humidity
           ? _value.humidity
@@ -103,10 +159,18 @@ abstract class _$$WeatherConditionsModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String location,
+      {String? location,
       WeatherCondition weatherCondition,
       String description,
+      bool isDayTime,
       num? temperature,
+      num? feelsLike,
+      num? windSpeed,
+      num? windGusts,
+      String? windDirection,
+      int? uvIndex,
+      String? uvIndexLabel,
+      num? visibility,
       num? humidity,
       num? rainProbability});
 }
@@ -124,18 +188,26 @@ class __$$WeatherConditionsModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? location = null,
+    Object? location = freezed,
     Object? weatherCondition = null,
     Object? description = null,
+    Object? isDayTime = null,
     Object? temperature = freezed,
+    Object? feelsLike = freezed,
+    Object? windSpeed = freezed,
+    Object? windGusts = freezed,
+    Object? windDirection = freezed,
+    Object? uvIndex = freezed,
+    Object? uvIndexLabel = freezed,
+    Object? visibility = freezed,
     Object? humidity = freezed,
     Object? rainProbability = freezed,
   }) {
     return _then(_$WeatherConditionsModelImpl(
-      location: null == location
+      location: freezed == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       weatherCondition: null == weatherCondition
           ? _value.weatherCondition
           : weatherCondition // ignore: cast_nullable_to_non_nullable
@@ -144,9 +216,41 @@ class __$$WeatherConditionsModelImplCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
+      isDayTime: null == isDayTime
+          ? _value.isDayTime
+          : isDayTime // ignore: cast_nullable_to_non_nullable
+              as bool,
       temperature: freezed == temperature
           ? _value.temperature
           : temperature // ignore: cast_nullable_to_non_nullable
+              as num?,
+      feelsLike: freezed == feelsLike
+          ? _value.feelsLike
+          : feelsLike // ignore: cast_nullable_to_non_nullable
+              as num?,
+      windSpeed: freezed == windSpeed
+          ? _value.windSpeed
+          : windSpeed // ignore: cast_nullable_to_non_nullable
+              as num?,
+      windGusts: freezed == windGusts
+          ? _value.windGusts
+          : windGusts // ignore: cast_nullable_to_non_nullable
+              as num?,
+      windDirection: freezed == windDirection
+          ? _value.windDirection
+          : windDirection // ignore: cast_nullable_to_non_nullable
+              as String?,
+      uvIndex: freezed == uvIndex
+          ? _value.uvIndex
+          : uvIndex // ignore: cast_nullable_to_non_nullable
+              as int?,
+      uvIndexLabel: freezed == uvIndexLabel
+          ? _value.uvIndexLabel
+          : uvIndexLabel // ignore: cast_nullable_to_non_nullable
+              as String?,
+      visibility: freezed == visibility
+          ? _value.visibility
+          : visibility // ignore: cast_nullable_to_non_nullable
               as num?,
       humidity: freezed == humidity
           ? _value.humidity
@@ -164,21 +268,45 @@ class __$$WeatherConditionsModelImplCopyWithImpl<$Res>
 
 class _$WeatherConditionsModelImpl implements _WeatherConditionsModel {
   const _$WeatherConditionsModelImpl(
-      {required this.location,
+      {this.location,
       required this.weatherCondition,
       required this.description,
+      required this.isDayTime,
       this.temperature,
+      this.feelsLike,
+      this.windSpeed,
+      this.windGusts,
+      this.windDirection,
+      this.uvIndex,
+      this.uvIndexLabel,
+      this.visibility,
       this.humidity,
       this.rainProbability});
 
   @override
-  final String location;
+  final String? location;
   @override
   final WeatherCondition weatherCondition;
   @override
   final String description;
   @override
+  final bool isDayTime;
+  @override
   final num? temperature;
+  @override
+  final num? feelsLike;
+  @override
+  final num? windSpeed;
+  @override
+  final num? windGusts;
+  @override
+  final String? windDirection;
+  @override
+  final int? uvIndex;
+  @override
+  final String? uvIndexLabel;
+  @override
+  final num? visibility;
   @override
   final num? humidity;
   @override
@@ -186,7 +314,7 @@ class _$WeatherConditionsModelImpl implements _WeatherConditionsModel {
 
   @override
   String toString() {
-    return 'WeatherConditionsModel(location: $location, weatherCondition: $weatherCondition, description: $description, temperature: $temperature, humidity: $humidity, rainProbability: $rainProbability)';
+    return 'WeatherConditionsModel(location: $location, weatherCondition: $weatherCondition, description: $description, isDayTime: $isDayTime, temperature: $temperature, feelsLike: $feelsLike, windSpeed: $windSpeed, windGusts: $windGusts, windDirection: $windDirection, uvIndex: $uvIndex, uvIndexLabel: $uvIndexLabel, visibility: $visibility, humidity: $humidity, rainProbability: $rainProbability)';
   }
 
   @override
@@ -200,8 +328,23 @@ class _$WeatherConditionsModelImpl implements _WeatherConditionsModel {
                 other.weatherCondition == weatherCondition) &&
             (identical(other.description, description) ||
                 other.description == description) &&
+            (identical(other.isDayTime, isDayTime) ||
+                other.isDayTime == isDayTime) &&
             (identical(other.temperature, temperature) ||
                 other.temperature == temperature) &&
+            (identical(other.feelsLike, feelsLike) ||
+                other.feelsLike == feelsLike) &&
+            (identical(other.windSpeed, windSpeed) ||
+                other.windSpeed == windSpeed) &&
+            (identical(other.windGusts, windGusts) ||
+                other.windGusts == windGusts) &&
+            (identical(other.windDirection, windDirection) ||
+                other.windDirection == windDirection) &&
+            (identical(other.uvIndex, uvIndex) || other.uvIndex == uvIndex) &&
+            (identical(other.uvIndexLabel, uvIndexLabel) ||
+                other.uvIndexLabel == uvIndexLabel) &&
+            (identical(other.visibility, visibility) ||
+                other.visibility == visibility) &&
             (identical(other.humidity, humidity) ||
                 other.humidity == humidity) &&
             (identical(other.rainProbability, rainProbability) ||
@@ -209,8 +352,22 @@ class _$WeatherConditionsModelImpl implements _WeatherConditionsModel {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, location, weatherCondition,
-      description, temperature, humidity, rainProbability);
+  int get hashCode => Object.hash(
+      runtimeType,
+      location,
+      weatherCondition,
+      description,
+      isDayTime,
+      temperature,
+      feelsLike,
+      windSpeed,
+      windGusts,
+      windDirection,
+      uvIndex,
+      uvIndexLabel,
+      visibility,
+      humidity,
+      rainProbability);
 
   @JsonKey(ignore: true)
   @override
@@ -222,21 +379,45 @@ class _$WeatherConditionsModelImpl implements _WeatherConditionsModel {
 
 abstract class _WeatherConditionsModel implements WeatherConditionsModel {
   const factory _WeatherConditionsModel(
-      {required final String location,
+      {final String? location,
       required final WeatherCondition weatherCondition,
       required final String description,
+      required final bool isDayTime,
       final num? temperature,
+      final num? feelsLike,
+      final num? windSpeed,
+      final num? windGusts,
+      final String? windDirection,
+      final int? uvIndex,
+      final String? uvIndexLabel,
+      final num? visibility,
       final num? humidity,
       final num? rainProbability}) = _$WeatherConditionsModelImpl;
 
   @override
-  String get location;
+  String? get location;
   @override
   WeatherCondition get weatherCondition;
   @override
   String get description;
   @override
+  bool get isDayTime;
+  @override
   num? get temperature;
+  @override
+  num? get feelsLike;
+  @override
+  num? get windSpeed;
+  @override
+  num? get windGusts;
+  @override
+  String? get windDirection;
+  @override
+  int? get uvIndex;
+  @override
+  String? get uvIndexLabel;
+  @override
+  num? get visibility;
   @override
   num? get humidity;
   @override

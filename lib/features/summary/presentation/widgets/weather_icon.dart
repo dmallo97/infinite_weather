@@ -21,10 +21,26 @@ class WeatherIcon extends StatelessWidget {
         return CupertinoIcons.cloud_rain;
       case WeatherCondition.foggy:
         return CupertinoIcons.cloud_fog;
-      case WeatherCondition.snowy:
+      case WeatherCondition.snowy ||
+            WeatherCondition.partlyCloudySnowingDay ||
+            WeatherCondition.partlyCloudySnowingNight:
         return CupertinoIcons.cloud_snow;
+      case WeatherCondition.partlyCloudyRainingDay:
+        return CupertinoIcons.cloud_sun_rain;
+      case WeatherCondition.partlyCloudyRainingNight:
+        return CupertinoIcons.cloud_moon_rain;
+      case WeatherCondition.icy || WeatherCondition.sunnySnowing:
+        return CupertinoIcons.snow;
+      case WeatherCondition.windy:
+        return CupertinoIcons.wind;
+      case WeatherCondition.stormyNight:
+        return CupertinoIcons.cloud_moon_bolt;
+      case WeatherCondition.stormyDay:
+        return CupertinoIcons.cloud_sun_bolt;
+      case WeatherCondition.stormy:
+        return CupertinoIcons.cloud_bolt;
       default:
-        return CupertinoIcons.thermometer;
+        return CupertinoIcons.question_circle;
     }
   }
 
