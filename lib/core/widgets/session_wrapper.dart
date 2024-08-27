@@ -61,7 +61,7 @@ class SessionShellMainView extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 24.sp, vertical: 24.sp),
                     child: FilledButton(
                       onPressed: () {
-                        //context.read<ConnectivityCheckBloc>().add(const ConnectivityCheckEvent.checkConnectivity());
+                        getIt<ConnectivityCheckBloc>().add(const ConnectivityCheckEvent.checkConnectivity());
                       },
                       child: Text('Reintentar'),
                     ),
