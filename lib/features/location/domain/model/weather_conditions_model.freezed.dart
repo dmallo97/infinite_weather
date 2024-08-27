@@ -16,6 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$WeatherConditionsModel {
+  String get location => throw _privateConstructorUsedError;
   WeatherCondition get weatherCondition => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   num? get temperature => throw _privateConstructorUsedError;
@@ -34,7 +35,8 @@ abstract class $WeatherConditionsModelCopyWith<$Res> {
       _$WeatherConditionsModelCopyWithImpl<$Res, WeatherConditionsModel>;
   @useResult
   $Res call(
-      {WeatherCondition weatherCondition,
+      {String location,
+      WeatherCondition weatherCondition,
       String description,
       num? temperature,
       num? humidity,
@@ -55,6 +57,7 @@ class _$WeatherConditionsModelCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? location = null,
     Object? weatherCondition = null,
     Object? description = null,
     Object? temperature = freezed,
@@ -62,6 +65,10 @@ class _$WeatherConditionsModelCopyWithImpl<$Res,
     Object? rainProbability = freezed,
   }) {
     return _then(_value.copyWith(
+      location: null == location
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as String,
       weatherCondition: null == weatherCondition
           ? _value.weatherCondition
           : weatherCondition // ignore: cast_nullable_to_non_nullable
@@ -96,7 +103,8 @@ abstract class _$$WeatherConditionsModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {WeatherCondition weatherCondition,
+      {String location,
+      WeatherCondition weatherCondition,
       String description,
       num? temperature,
       num? humidity,
@@ -116,6 +124,7 @@ class __$$WeatherConditionsModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? location = null,
     Object? weatherCondition = null,
     Object? description = null,
     Object? temperature = freezed,
@@ -123,6 +132,10 @@ class __$$WeatherConditionsModelImplCopyWithImpl<$Res>
     Object? rainProbability = freezed,
   }) {
     return _then(_$WeatherConditionsModelImpl(
+      location: null == location
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as String,
       weatherCondition: null == weatherCondition
           ? _value.weatherCondition
           : weatherCondition // ignore: cast_nullable_to_non_nullable
@@ -151,12 +164,15 @@ class __$$WeatherConditionsModelImplCopyWithImpl<$Res>
 
 class _$WeatherConditionsModelImpl implements _WeatherConditionsModel {
   const _$WeatherConditionsModelImpl(
-      {required this.weatherCondition,
+      {required this.location,
+      required this.weatherCondition,
       required this.description,
       this.temperature,
       this.humidity,
       this.rainProbability});
 
+  @override
+  final String location;
   @override
   final WeatherCondition weatherCondition;
   @override
@@ -170,7 +186,7 @@ class _$WeatherConditionsModelImpl implements _WeatherConditionsModel {
 
   @override
   String toString() {
-    return 'WeatherConditionsModel(weatherCondition: $weatherCondition, description: $description, temperature: $temperature, humidity: $humidity, rainProbability: $rainProbability)';
+    return 'WeatherConditionsModel(location: $location, weatherCondition: $weatherCondition, description: $description, temperature: $temperature, humidity: $humidity, rainProbability: $rainProbability)';
   }
 
   @override
@@ -178,6 +194,8 @@ class _$WeatherConditionsModelImpl implements _WeatherConditionsModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WeatherConditionsModelImpl &&
+            (identical(other.location, location) ||
+                other.location == location) &&
             (identical(other.weatherCondition, weatherCondition) ||
                 other.weatherCondition == weatherCondition) &&
             (identical(other.description, description) ||
@@ -191,8 +209,8 @@ class _$WeatherConditionsModelImpl implements _WeatherConditionsModel {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, weatherCondition, description,
-      temperature, humidity, rainProbability);
+  int get hashCode => Object.hash(runtimeType, location, weatherCondition,
+      description, temperature, humidity, rainProbability);
 
   @JsonKey(ignore: true)
   @override
@@ -204,12 +222,15 @@ class _$WeatherConditionsModelImpl implements _WeatherConditionsModel {
 
 abstract class _WeatherConditionsModel implements WeatherConditionsModel {
   const factory _WeatherConditionsModel(
-      {required final WeatherCondition weatherCondition,
+      {required final String location,
+      required final WeatherCondition weatherCondition,
       required final String description,
       final num? temperature,
       final num? humidity,
       final num? rainProbability}) = _$WeatherConditionsModelImpl;
 
+  @override
+  String get location;
   @override
   WeatherCondition get weatherCondition;
   @override

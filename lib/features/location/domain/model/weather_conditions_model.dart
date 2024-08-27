@@ -5,6 +5,7 @@ part 'weather_conditions_model.freezed.dart';
 @freezed
 class WeatherConditionsModel with _$WeatherConditionsModel {
   const factory WeatherConditionsModel({
+    required String location,
     required WeatherCondition weatherCondition,
     required String description,
     num? temperature,
@@ -14,8 +15,13 @@ class WeatherConditionsModel with _$WeatherConditionsModel {
 }
 
 enum WeatherCondition {
-  sunny,
+  clearDay,
+  clearNight,
+  partlyCloudyDay,
+  partlyCloudyNight,
   cloudy,
-  partialCloudy,
-  storms,
+  rainy,
+  foggy,
+  snowy,
+  sunnySnowing,
 }

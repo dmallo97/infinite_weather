@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:infinite_weather/core/widgets/nav_bar_container.dart';
 import 'package:infinite_weather/core/widgets/session_wrapper.dart';
+import 'package:infinite_weather/features/summary/presentation/summary_page.dart';
 
 class Routes {
   static const summary = 'summary';
@@ -10,7 +11,7 @@ class Routes {
   static const locationDetails = 'location-details';
 }
 
-final GlobalKey<NavigatorState> _rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
+final _rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 final _mainNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'main');
 final _locationsNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'locations');
 final _summaryNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'summary');
@@ -18,7 +19,7 @@ final _summaryNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'summary');
 final GoRouter router = GoRouter(
   debugLogDiagnostics: true,
   navigatorKey: _rootNavigatorKey,
-  initialLocation: '/',
+  initialLocation: '/summary',
   routes: routes,
 );
 
@@ -38,14 +39,20 @@ final routes = <RouteBase>[
                 path: '/locations',
                 name: Routes.locations,
                 pageBuilder: (context, state) {
-                  return NoTransitionPage(child: child);
+                  return const NoTransitionPage(
+                      child: Center(
+                    child: Text('Locations'),
+                  ));
                 },
               ),
               GoRoute(
                 path: '/location-details',
                 name: Routes.locationDetails,
                 pageBuilder: (context, state) {
-                  return NoTransitionPage(child: child);
+                  return const NoTransitionPage(
+                      child: Center(
+                    child: Text('Location details'),
+                  ));
                 },
               ),
             ],
@@ -58,7 +65,7 @@ final routes = <RouteBase>[
                 path: '/summary',
                 name: Routes.summary,
                 pageBuilder: (context, state) {
-                  return NoTransitionPage(child: child);
+                  return const NoTransitionPage(child: SummaryPage());
                 },
               )
             ],
