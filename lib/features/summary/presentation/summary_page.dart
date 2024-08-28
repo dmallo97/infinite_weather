@@ -6,6 +6,8 @@ import 'package:infinite_weather/config/style/app_styles.dart';
 import 'package:infinite_weather/features/location/domain/model/weather_conditions_model.dart';
 import 'package:infinite_weather/features/summary/presentation/bloc/summary_bloc.dart';
 import 'package:infinite_weather/features/summary/presentation/widgets/weather_icon.dart';
+import 'package:infinite_weather/gen/assets.gen.dart';
+import 'package:lottie/lottie.dart';
 
 class SummaryPage extends StatelessWidget {
   const SummaryPage({super.key});
@@ -26,6 +28,7 @@ class SummaryPage extends StatelessWidget {
                 slivers: [
                   SliverAppBar(
                     title: Text(data.location!),
+                    pinned: true,
                   ),
                   SliverFillRemaining(
                     child: Column(
@@ -41,7 +44,7 @@ class SummaryPage extends StatelessWidget {
             );
           },
           orElse: () {
-            return const Center(child: Text('Loading...'));
+            return Center(child: Lottie.asset(Assets.lib.resources.media.loading));
           },
         );
       },

@@ -25,34 +25,50 @@ class SearchField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 40,
       width: double.infinity,
       child: TextField(
         autofocus: autoFocus,
         controller: controller,
         decoration: InputDecoration(
-          filled: true,
-          fillColor: AppColors.darkGrey,
-          isDense: true,
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(17.5),
+            borderSide: BorderSide(
+              width: 1,
+              style: BorderStyle.solid,
+              color: Theme.of(context).colorScheme.onPrimary,
+            ),
+          ),
           contentPadding: const EdgeInsets.fromLTRB(10.0, 1.0, 5.0, 0.0),
           prefixIcon: Padding(
             padding: const EdgeInsets.all(13),
-            child: Icon(Icons.search),
-            // child: SvgPicture.asset(
-            //   "assets/search_icon.svg",
-            //   colorFilter:
-            //   ColorFilter.mode(Theme.of(context).primaryColor, BlendMode.srcIn),
-            // ),
+            child: Icon(
+              Icons.search,
+              color: Theme.of(context).colorScheme.onPrimary,
+            ),
+          ),
+          suffix: Padding(
+            padding: const EdgeInsets.only(right: 8.0),
+            child: SizedBox(
+              height: 30,
+              child: FilledButton(
+                onPressed: () {
+                  onSubmitted?.call(controller?.value.text ?? '');
+                },
+                style: FilledButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
+                child: const Text('Go'),
+              ),
+            ),
           ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(17.5),
-            borderSide: const BorderSide(
-              width: 0,
-              style: BorderStyle.none,
+            borderSide: BorderSide(
+              width: 1,
+              style: BorderStyle.solid,
+              color: Theme.of(context).colorScheme.onPrimary,
             ),
           ),
           labelStyle: const TextStyle(
-            color: AppColors.darkGrey,
+            color: AppColors.lightBlack,
           ),
           hintStyle: const TextStyle(fontSize: 17, color: AppColors.darkGrey, fontWeight: FontWeight.normal),
           hintText: hintText,
