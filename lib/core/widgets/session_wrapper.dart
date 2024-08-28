@@ -15,22 +15,7 @@ class SessionWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(providers: const [
-      // BlocProvider(
-      //   create: (context) => getIt<Home>(),
-      // ),
-      // BlocProvider.value(value: GetIt.instance<ShoppingCartBloc>()..add(const ShoppingCartEvent.fetchCarts())),
-      // BlocProvider.value(value: GetIt.instance<ShopCubit>()),
-      // BlocProvider(
-      //   create: (context) => ConnectivityCheckBloc()..add(const ConnectivityCheckEvent.checkConnectivity()),
-      // ),
-      // BlocProvider(
-      //   create: (context) => GetIt.instance<ApplicationCubit>(),
-      // ),
-      // BlocProvider(
-      //   create: (context) => GetIt.instance<AddressBloc>()..add(const AddressEvent.getAddresses()),
-      // ),
-    ], child: SessionShellMainView(child: child));
+    return SessionShellMainView(child: child);
   }
 }
 

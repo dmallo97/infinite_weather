@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:infinite_weather/config/style/app_colors.dart';
 import 'package:infinite_weather/config/style/custom_theme.dart';
 
-class EasyBookingLightTheme implements CustomTheme {
+class InfiniteWeatherLightTheme implements CustomTheme {
   @override
   ThemeExtension get customColorPalette => ThemeCustomColors(
         background: AppColors.background,
