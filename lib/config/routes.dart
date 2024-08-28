@@ -32,6 +32,19 @@ final routes = <RouteBase>[
         parentNavigatorKey: _mainNavigatorKey,
         branches: [
           StatefulShellBranch(
+            navigatorKey: _summaryNavigatorKey,
+            initialLocation: '/summary',
+            routes: [
+              GoRoute(
+                path: '/summary',
+                name: Routes.summary,
+                pageBuilder: (context, state) {
+                  return const NoTransitionPage(child: SummaryPage());
+                },
+              )
+            ],
+          ),
+          StatefulShellBranch(
             navigatorKey: _locationsNavigatorKey,
             initialLocation: '/locations',
             routes: [
@@ -55,19 +68,6 @@ final routes = <RouteBase>[
                   ));
                 },
               ),
-            ],
-          ),
-          StatefulShellBranch(
-            navigatorKey: _summaryNavigatorKey,
-            initialLocation: '/summary',
-            routes: [
-              GoRoute(
-                path: '/summary',
-                name: Routes.summary,
-                pageBuilder: (context, state) {
-                  return const NoTransitionPage(child: SummaryPage());
-                },
-              )
             ],
           ),
         ],

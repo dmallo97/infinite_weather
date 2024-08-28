@@ -32,14 +32,14 @@ class NavBarContainer extends StatelessWidget {
           BottomNavBarItem(
             label: 'Summary',
             // icon: Assets.bottomNavBar.categoriesNavBarIcon.svg(),
-            onTap: () => _goBranch(1),
-            isSelected: navigationShell.currentIndex == 1,
+            onTap: () => _goBranch(0),
+            isSelected: navigationShell.currentIndex == 0,
           ),
           BottomNavBarItem(
             label: 'Locations',
             // icon: Assets.bottomNavBar.favNavBarIcon.svg(),
-            onTap: () => _goBranch(2),
-            isSelected: navigationShell.currentIndex == 2,
+            onTap: () => _goBranch(1),
+            isSelected: navigationShell.currentIndex == 1,
           ),
         ],
       ),
