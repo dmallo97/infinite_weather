@@ -24,8 +24,8 @@ mixin _$LocationMetadataModel {
   String get country => throw _privateConstructorUsedError;
   String get adminArea => throw _privateConstructorUsedError;
   String get timezone => throw _privateConstructorUsedError;
-  String get latitude => throw _privateConstructorUsedError;
-  String get longitude => throw _privateConstructorUsedError;
+  double get latitude => throw _privateConstructorUsedError;
+  double get longitude => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $LocationMetadataModelCopyWith<LocationMetadataModel> get copyWith =>
@@ -47,8 +47,8 @@ abstract class $LocationMetadataModelCopyWith<$Res> {
       String country,
       String adminArea,
       String timezone,
-      String latitude,
-      String longitude});
+      double latitude,
+      double longitude});
 }
 
 /// @nodoc
@@ -112,11 +112,11 @@ class _$LocationMetadataModelCopyWithImpl<$Res,
       latitude: null == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
-              as String,
+              as double,
       longitude: null == longitude
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
-              as String,
+              as double,
     ) as $Val);
   }
 }
@@ -139,8 +139,8 @@ abstract class _$$LocationMetadataModelImplCopyWith<$Res>
       String country,
       String adminArea,
       String timezone,
-      String latitude,
-      String longitude});
+      double latitude,
+      double longitude});
 }
 
 /// @nodoc
@@ -202,11 +202,11 @@ class __$$LocationMetadataModelImplCopyWithImpl<$Res>
       latitude: null == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
-              as String,
+              as double,
       longitude: null == longitude
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
-              as String,
+              as double,
     ));
   }
 }
@@ -243,9 +243,9 @@ class _$LocationMetadataModelImpl implements _LocationMetadataModel {
   @override
   final String timezone;
   @override
-  final String latitude;
+  final double latitude;
   @override
-  final String longitude;
+  final double longitude;
 
   @override
   String toString() {
@@ -295,8 +295,8 @@ abstract class _LocationMetadataModel implements LocationMetadataModel {
       required final String country,
       required final String adminArea,
       required final String timezone,
-      required final String latitude,
-      required final String longitude}) = _$LocationMetadataModelImpl;
+      required final double latitude,
+      required final double longitude}) = _$LocationMetadataModelImpl;
 
   @override
   String get key;
@@ -315,9 +315,9 @@ abstract class _LocationMetadataModel implements LocationMetadataModel {
   @override
   String get timezone;
   @override
-  String get latitude;
+  double get latitude;
   @override
-  String get longitude;
+  double get longitude;
   @override
   @JsonKey(ignore: true)
   _$$LocationMetadataModelImplCopyWith<_$LocationMetadataModelImpl>

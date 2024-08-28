@@ -16,6 +16,7 @@ class SummaryBloc extends Bloc<SummaryEvent, SummaryState> {
 
   SummaryBloc(this._getCurrentWeatherUseCase) : super(const SummaryState()) {
     on<_FetchCurrentWeather>(_fetchCurrentWeather);
+    add(const _FetchCurrentWeather());
   }
 
   void _fetchCurrentWeather(SummaryEvent event, Emitter<SummaryState> emit) async {

@@ -13,7 +13,7 @@ class LocationMetadataModel with _$LocationMetadataModel {
     required String country,
     required String adminArea,
     required String timezone,
-    required String latitude,
-    required String longitude,
+    required double latitude,
+    required double longitude,
   }) = _LocationMetadataModel;
 }

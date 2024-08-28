@@ -46,6 +46,6 @@ class WeatherIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Icon(getWeatherIcon(), size: 40);
+    return Icon(getWeatherIcon(), size: 70);
   }
 }

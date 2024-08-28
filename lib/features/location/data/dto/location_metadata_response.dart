@@ -20,7 +20,7 @@ class LocationMetadataResponse with _$LocationMetadataResponse implements BaseDt
     required Map<String, dynamic> AdministrativeArea,
     required Map<String, dynamic> TimeZone,
     required Map<String, dynamic> GeoPosition,
-    String? ParentCity,
+    Map<String, dynamic>? ParentCity,
   }) = _LocationMetadataResponse;
 
   factory LocationMetadataResponse.fromJson(Map<String, dynamic> json) => _$LocationMetadataResponseFromJson(json);

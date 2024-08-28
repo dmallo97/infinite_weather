@@ -20,7 +20,7 @@ _$LocationMetadataResponseImpl _$$LocationMetadataResponseImplFromJson(
       AdministrativeArea: json['AdministrativeArea'] as Map<String, dynamic>,
       TimeZone: json['TimeZone'] as Map<String, dynamic>,
       GeoPosition: json['GeoPosition'] as Map<String, dynamic>,
-      ParentCity: json['ParentCity'] as String?,
+      ParentCity: json['ParentCity'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$$LocationMetadataResponseImplToJson(

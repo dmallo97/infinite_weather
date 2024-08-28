@@ -33,7 +33,7 @@ mixin _$LocationMetadataResponse {
       throw _privateConstructorUsedError;
   Map<String, dynamic> get TimeZone => throw _privateConstructorUsedError;
   Map<String, dynamic> get GeoPosition => throw _privateConstructorUsedError;
-  String? get ParentCity => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get ParentCity => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -59,7 +59,7 @@ abstract class $LocationMetadataResponseCopyWith<$Res> {
       Map<String, dynamic> AdministrativeArea,
       Map<String, dynamic> TimeZone,
       Map<String, dynamic> GeoPosition,
-      String? ParentCity});
+      Map<String, dynamic>? ParentCity});
 }
 
 /// @nodoc
@@ -137,7 +137,7 @@ class _$LocationMetadataResponseCopyWithImpl<$Res,
       ParentCity: freezed == ParentCity
           ? _value.ParentCity
           : ParentCity // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as Map<String, dynamic>?,
     ) as $Val);
   }
 }
@@ -163,7 +163,7 @@ abstract class _$$LocationMetadataResponseImplCopyWith<$Res>
       Map<String, dynamic> AdministrativeArea,
       Map<String, dynamic> TimeZone,
       Map<String, dynamic> GeoPosition,
-      String? ParentCity});
+      Map<String, dynamic>? ParentCity});
 }
 
 /// @nodoc
@@ -238,9 +238,9 @@ class __$$LocationMetadataResponseImplCopyWithImpl<$Res>
           : GeoPosition // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
       ParentCity: freezed == ParentCity
-          ? _value.ParentCity
+          ? _value._ParentCity
           : ParentCity // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -260,12 +260,13 @@ class _$LocationMetadataResponseImpl extends _LocationMetadataResponse {
       required final Map<String, dynamic> AdministrativeArea,
       required final Map<String, dynamic> TimeZone,
       required final Map<String, dynamic> GeoPosition,
-      this.ParentCity})
+      final Map<String, dynamic>? ParentCity})
       : _Region = Region,
         _Country = Country,
         _AdministrativeArea = AdministrativeArea,
         _TimeZone = TimeZone,
         _GeoPosition = GeoPosition,
+        _ParentCity = ParentCity,
         super._();
 
   factory _$LocationMetadataResponseImpl.fromJson(Map<String, dynamic> json) =>
@@ -324,8 +325,15 @@ class _$LocationMetadataResponseImpl extends _LocationMetadataResponse {
     return EqualUnmodifiableMapView(_GeoPosition);
   }
 
+  final Map<String, dynamic>? _ParentCity;
   @override
-  final String? ParentCity;
+  Map<String, dynamic>? get ParentCity {
+    final value = _ParentCity;
+    if (value == null) return null;
+    if (_ParentCity is EqualUnmodifiableMapView) return _ParentCity;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   @override
   String toString() {
@@ -352,8 +360,8 @@ class _$LocationMetadataResponseImpl extends _LocationMetadataResponse {
             const DeepCollectionEquality().equals(other._TimeZone, _TimeZone) &&
             const DeepCollectionEquality()
                 .equals(other._GeoPosition, _GeoPosition) &&
-            (identical(other.ParentCity, ParentCity) ||
-                other.ParentCity == ParentCity));
+            const DeepCollectionEquality()
+                .equals(other._ParentCity, _ParentCity));
   }
 
   @JsonKey(ignore: true)
@@ -371,7 +379,7 @@ class _$LocationMetadataResponseImpl extends _LocationMetadataResponse {
       const DeepCollectionEquality().hash(_AdministrativeArea),
       const DeepCollectionEquality().hash(_TimeZone),
       const DeepCollectionEquality().hash(_GeoPosition),
-      ParentCity);
+      const DeepCollectionEquality().hash(_ParentCity));
 
   @JsonKey(ignore: true)
   @override
@@ -401,7 +409,7 @@ abstract class _LocationMetadataResponse extends LocationMetadataResponse {
       required final Map<String, dynamic> AdministrativeArea,
       required final Map<String, dynamic> TimeZone,
       required final Map<String, dynamic> GeoPosition,
-      final String? ParentCity}) = _$LocationMetadataResponseImpl;
+      final Map<String, dynamic>? ParentCity}) = _$LocationMetadataResponseImpl;
   const _LocationMetadataResponse._() : super._();
 
   factory _LocationMetadataResponse.fromJson(Map<String, dynamic> json) =
@@ -430,7 +438,7 @@ abstract class _LocationMetadataResponse extends LocationMetadataResponse {
   @override
   Map<String, dynamic> get GeoPosition;
   @override
-  String? get ParentCity;
+  Map<String, dynamic>? get ParentCity;
   @override
   @JsonKey(ignore: true)
   _$$LocationMetadataResponseImplCopyWith<_$LocationMetadataResponseImpl>

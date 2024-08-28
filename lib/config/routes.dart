@@ -73,6 +73,7 @@ final routes = <RouteBase>[
         ],
         navigatorContainerBuilder: (context, navigationShell, children) =>
             NavBarContainer(navigationShell: navigationShell, children: children),
+        builder: (context, state, navigationShell) => navigationShell,
       ),
       // GoRoute(
       //   parentNavigatorKey: _mainNavigatorKey,
