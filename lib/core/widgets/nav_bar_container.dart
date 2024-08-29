@@ -30,22 +30,14 @@ class NavBarContainer extends StatelessWidget {
       bottomNavigationBar: BottomNavBar(
         items: [
           BottomNavBarItem(
-            label: 'Inicio',
-            // icon: Assets.bottomNavBar.homeNavBarIcon.svg(),
+            label: 'Summary',
             onTap: () => _goBranch(0),
             isSelected: navigationShell.currentIndex == 0,
           ),
           BottomNavBarItem(
-            label: 'Pasillos',
-            // icon: Assets.bottomNavBar.categoriesNavBarIcon.svg(),
+            label: 'Locations',
             onTap: () => _goBranch(1),
             isSelected: navigationShell.currentIndex == 1,
-          ),
-          BottomNavBarItem(
-            label: 'Favoritos',
-            // icon: Assets.bottomNavBar.favNavBarIcon.svg(),
-            onTap: () => _goBranch(2),
-            isSelected: navigationShell.currentIndex == 2,
           ),
         ],
       ),

@@ -15,22 +15,7 @@ class SessionWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(providers: const [
-      // BlocProvider(
-      //   create: (context) => getIt<Home>(),
-      // ),
-      // BlocProvider.value(value: GetIt.instance<ShoppingCartBloc>()..add(const ShoppingCartEvent.fetchCarts())),
-      // BlocProvider.value(value: GetIt.instance<ShopCubit>()),
-      // BlocProvider(
-      //   create: (context) => ConnectivityCheckBloc()..add(const ConnectivityCheckEvent.checkConnectivity()),
-      // ),
-      // BlocProvider(
-      //   create: (context) => GetIt.instance<ApplicationCubit>(),
-      // ),
-      // BlocProvider(
-      //   create: (context) => GetIt.instance<AddressBloc>()..add(const AddressEvent.getAddresses()),
-      // ),
-    ], child: SessionShellMainView(child: child));
+    return SessionShellMainView(child: child);
   }
 }
 
@@ -61,19 +46,15 @@ class SessionShellMainView extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 24.sp, vertical: 24.sp),
                     child: FilledButton(
                       onPressed: () {
-                        //context.read<ConnectivityCheckBloc>().add(const ConnectivityCheckEvent.checkConnectivity());
+                        getIt<ConnectivityCheckBloc>().add(const ConnectivityCheckEvent.checkConnectivity());
                       },
-                      child: Text('Reintentar'),
+                      child: const Text('Reintentar'),
                     ),
                   ),
                   body: SizedBox.expand(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        // Assets.connectivity.noNetworkImage.svg(
-                        //   width: 216.sp,
-                        //   height: 216.sp,
-                        // ),
                         Text(
                           'No tienes conexión a internet',
                           style: AppFontStyles.getTitleBold,

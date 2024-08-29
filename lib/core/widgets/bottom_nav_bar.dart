@@ -9,11 +9,11 @@ class BottomNavBar extends StatelessWidget {
   });
 
   final List<BottomNavBarItem> items;
-  static const double navBarClearance = 80;
+  static const double navBarClearance = 100;
 
   @override
   Widget build(BuildContext context) {
-    final navBarMargin = MediaQuery.of(context).size.width / 12;
+    final navBarMargin = MediaQuery.of(context).size.width / 8;
     return Container(
       height: 48,
       margin: EdgeInsets.only(
@@ -72,8 +72,10 @@ class BottomNavBarItem extends StatelessWidget {
       : null;
 
   TextStyle itemTextStyle(BuildContext context) {
-    final textStyle = AppFontStyles.getBodyReg.copyWith(fontSize: 14);
-    return isSelected ? textStyle.copyWith(color: Theme.of(context).colorScheme.onPrimary) : textStyle.copyWith(color: Theme.of(context).extension<ThemeCustomColors>()!.body);
+    final textStyle = AppFontStyles.getBodySemiBold.copyWith(fontSize: 14);
+    return isSelected
+        ? textStyle.copyWith(color: Theme.of(context).colorScheme.onPrimary)
+        : textStyle.copyWith(color: Theme.of(context).extension<ThemeCustomColors>()!.body);
   }
 
   @override
@@ -123,5 +125,3 @@ class BottomNavBarItem extends StatelessWidget {
     );
   }
 }
-
-

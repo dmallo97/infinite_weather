@@ -15,6 +15,18 @@ class AppFontStyles {
         fontWeight: FontWeightType.regular.getFontWeight(),
       );
 
+  static TextStyle get getBodyMed => TextStyle(
+        fontFamily: gilroy,
+        fontSize: 12,
+        fontWeight: FontWeightType.medium.getFontWeight(),
+      );
+  
+  static TextStyle get getBodySemiBold => TextStyle(
+        fontFamily: gilroy,
+        fontSize: 12,
+        fontWeight: FontWeightType.semiBold.getFontWeight(),
+      );
+
   static TextStyle get searchBarInactive => TextStyle(
         fontFamily: gilroy,
         fontSize: 16,
@@ -32,23 +44,14 @@ class AppFontStyles {
 
 enum FontWeightType {
   black,
-  //blackItalic,
   extraBold,
-  //extraBoldItalic,
   bold,
-  //boldItalic,
   semiBold,
-  //semiBoldItalic,
   medium,
-  //mediumItalic,
   regular,
-  //regularItalic,
   light,
-  //lightItalic,
   ultraLight,
-  //ultraLightItalic,
   thin;
-  //thinItalic;
 
   FontWeight getFontWeight() {
     switch (this) {

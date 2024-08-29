@@ -12,10 +12,4 @@ class FontFamily {
 
   /// Font family: Gilroy
   static const String gilroy = 'Gilroy';
-
-  /// Font family: Schyler
-  static const String schyler = 'Schyler';
-
-  /// Font family: Trajan Pro
-  static const String trajanPro = 'Trajan Pro';
 }
