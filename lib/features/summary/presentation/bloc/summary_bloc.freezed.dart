@@ -19,32 +19,44 @@ mixin _$SummaryEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() fetchCurrentWeather,
+    required TResult Function() loadSavedLocations,
+    required TResult Function(LocationMetadataModel locationData) saveLocation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fetchCurrentWeather,
+    TResult? Function()? loadSavedLocations,
+    TResult? Function(LocationMetadataModel locationData)? saveLocation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetchCurrentWeather,
+    TResult Function()? loadSavedLocations,
+    TResult Function(LocationMetadataModel locationData)? saveLocation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_FetchCurrentWeather value) fetchCurrentWeather,
+    required TResult Function(_LoadSavedLocations value) loadSavedLocations,
+    required TResult Function(_SaveLocation value) saveLocation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_FetchCurrentWeather value)? fetchCurrentWeather,
+    TResult? Function(_LoadSavedLocations value)? loadSavedLocations,
+    TResult? Function(_SaveLocation value)? saveLocation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FetchCurrentWeather value)? fetchCurrentWeather,
+    TResult Function(_LoadSavedLocations value)? loadSavedLocations,
+    TResult Function(_SaveLocation value)? saveLocation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -86,12 +98,21 @@ class __$$FetchCurrentWeatherImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchCurrentWeatherImpl implements _FetchCurrentWeather {
+class _$FetchCurrentWeatherImpl
+    with DiagnosticableTreeMixin
+    implements _FetchCurrentWeather {
   const _$FetchCurrentWeatherImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SummaryEvent.fetchCurrentWeather()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty('type', 'SummaryEvent.fetchCurrentWeather'));
   }
 
   @override
@@ -108,6 +129,8 @@ class _$FetchCurrentWeatherImpl implements _FetchCurrentWeather {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() fetchCurrentWeather,
+    required TResult Function() loadSavedLocations,
+    required TResult Function(LocationMetadataModel locationData) saveLocation,
   }) {
     return fetchCurrentWeather();
   }
@@ -116,6 +139,8 @@ class _$FetchCurrentWeatherImpl implements _FetchCurrentWeather {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fetchCurrentWeather,
+    TResult? Function()? loadSavedLocations,
+    TResult? Function(LocationMetadataModel locationData)? saveLocation,
   }) {
     return fetchCurrentWeather?.call();
   }
@@ -124,6 +149,8 @@ class _$FetchCurrentWeatherImpl implements _FetchCurrentWeather {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetchCurrentWeather,
+    TResult Function()? loadSavedLocations,
+    TResult Function(LocationMetadataModel locationData)? saveLocation,
     required TResult orElse(),
   }) {
     if (fetchCurrentWeather != null) {
@@ -136,6 +163,8 @@ class _$FetchCurrentWeatherImpl implements _FetchCurrentWeather {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_FetchCurrentWeather value) fetchCurrentWeather,
+    required TResult Function(_LoadSavedLocations value) loadSavedLocations,
+    required TResult Function(_SaveLocation value) saveLocation,
   }) {
     return fetchCurrentWeather(this);
   }
@@ -144,6 +173,8 @@ class _$FetchCurrentWeatherImpl implements _FetchCurrentWeather {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_FetchCurrentWeather value)? fetchCurrentWeather,
+    TResult? Function(_LoadSavedLocations value)? loadSavedLocations,
+    TResult? Function(_SaveLocation value)? saveLocation,
   }) {
     return fetchCurrentWeather?.call(this);
   }
@@ -152,6 +183,8 @@ class _$FetchCurrentWeatherImpl implements _FetchCurrentWeather {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FetchCurrentWeather value)? fetchCurrentWeather,
+    TResult Function(_LoadSavedLocations value)? loadSavedLocations,
+    TResult Function(_SaveLocation value)? saveLocation,
     required TResult orElse(),
   }) {
     if (fetchCurrentWeather != null) {
@@ -166,8 +199,288 @@ abstract class _FetchCurrentWeather implements SummaryEvent {
 }
 
 /// @nodoc
+abstract class _$$LoadSavedLocationsImplCopyWith<$Res> {
+  factory _$$LoadSavedLocationsImplCopyWith(_$LoadSavedLocationsImpl value,
+          $Res Function(_$LoadSavedLocationsImpl) then) =
+      __$$LoadSavedLocationsImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadSavedLocationsImplCopyWithImpl<$Res>
+    extends _$SummaryEventCopyWithImpl<$Res, _$LoadSavedLocationsImpl>
+    implements _$$LoadSavedLocationsImplCopyWith<$Res> {
+  __$$LoadSavedLocationsImplCopyWithImpl(_$LoadSavedLocationsImpl _value,
+      $Res Function(_$LoadSavedLocationsImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoadSavedLocationsImpl
+    with DiagnosticableTreeMixin
+    implements _LoadSavedLocations {
+  const _$LoadSavedLocationsImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SummaryEvent.loadSavedLocations()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty('type', 'SummaryEvent.loadSavedLocations'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadSavedLocationsImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fetchCurrentWeather,
+    required TResult Function() loadSavedLocations,
+    required TResult Function(LocationMetadataModel locationData) saveLocation,
+  }) {
+    return loadSavedLocations();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? fetchCurrentWeather,
+    TResult? Function()? loadSavedLocations,
+    TResult? Function(LocationMetadataModel locationData)? saveLocation,
+  }) {
+    return loadSavedLocations?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fetchCurrentWeather,
+    TResult Function()? loadSavedLocations,
+    TResult Function(LocationMetadataModel locationData)? saveLocation,
+    required TResult orElse(),
+  }) {
+    if (loadSavedLocations != null) {
+      return loadSavedLocations();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FetchCurrentWeather value) fetchCurrentWeather,
+    required TResult Function(_LoadSavedLocations value) loadSavedLocations,
+    required TResult Function(_SaveLocation value) saveLocation,
+  }) {
+    return loadSavedLocations(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FetchCurrentWeather value)? fetchCurrentWeather,
+    TResult? Function(_LoadSavedLocations value)? loadSavedLocations,
+    TResult? Function(_SaveLocation value)? saveLocation,
+  }) {
+    return loadSavedLocations?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FetchCurrentWeather value)? fetchCurrentWeather,
+    TResult Function(_LoadSavedLocations value)? loadSavedLocations,
+    TResult Function(_SaveLocation value)? saveLocation,
+    required TResult orElse(),
+  }) {
+    if (loadSavedLocations != null) {
+      return loadSavedLocations(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadSavedLocations implements SummaryEvent {
+  const factory _LoadSavedLocations() = _$LoadSavedLocationsImpl;
+}
+
+/// @nodoc
+abstract class _$$SaveLocationImplCopyWith<$Res> {
+  factory _$$SaveLocationImplCopyWith(
+          _$SaveLocationImpl value, $Res Function(_$SaveLocationImpl) then) =
+      __$$SaveLocationImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({LocationMetadataModel locationData});
+
+  $LocationMetadataModelCopyWith<$Res> get locationData;
+}
+
+/// @nodoc
+class __$$SaveLocationImplCopyWithImpl<$Res>
+    extends _$SummaryEventCopyWithImpl<$Res, _$SaveLocationImpl>
+    implements _$$SaveLocationImplCopyWith<$Res> {
+  __$$SaveLocationImplCopyWithImpl(
+      _$SaveLocationImpl _value, $Res Function(_$SaveLocationImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? locationData = null,
+  }) {
+    return _then(_$SaveLocationImpl(
+      null == locationData
+          ? _value.locationData
+          : locationData // ignore: cast_nullable_to_non_nullable
+              as LocationMetadataModel,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $LocationMetadataModelCopyWith<$Res> get locationData {
+    return $LocationMetadataModelCopyWith<$Res>(_value.locationData, (value) {
+      return _then(_value.copyWith(locationData: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$SaveLocationImpl with DiagnosticableTreeMixin implements _SaveLocation {
+  const _$SaveLocationImpl(this.locationData);
+
+  @override
+  final LocationMetadataModel locationData;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SummaryEvent.saveLocation(locationData: $locationData)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SummaryEvent.saveLocation'))
+      ..add(DiagnosticsProperty('locationData', locationData));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SaveLocationImpl &&
+            (identical(other.locationData, locationData) ||
+                other.locationData == locationData));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, locationData);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SaveLocationImplCopyWith<_$SaveLocationImpl> get copyWith =>
+      __$$SaveLocationImplCopyWithImpl<_$SaveLocationImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fetchCurrentWeather,
+    required TResult Function() loadSavedLocations,
+    required TResult Function(LocationMetadataModel locationData) saveLocation,
+  }) {
+    return saveLocation(locationData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? fetchCurrentWeather,
+    TResult? Function()? loadSavedLocations,
+    TResult? Function(LocationMetadataModel locationData)? saveLocation,
+  }) {
+    return saveLocation?.call(locationData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fetchCurrentWeather,
+    TResult Function()? loadSavedLocations,
+    TResult Function(LocationMetadataModel locationData)? saveLocation,
+    required TResult orElse(),
+  }) {
+    if (saveLocation != null) {
+      return saveLocation(locationData);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FetchCurrentWeather value) fetchCurrentWeather,
+    required TResult Function(_LoadSavedLocations value) loadSavedLocations,
+    required TResult Function(_SaveLocation value) saveLocation,
+  }) {
+    return saveLocation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FetchCurrentWeather value)? fetchCurrentWeather,
+    TResult? Function(_LoadSavedLocations value)? loadSavedLocations,
+    TResult? Function(_SaveLocation value)? saveLocation,
+  }) {
+    return saveLocation?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FetchCurrentWeather value)? fetchCurrentWeather,
+    TResult Function(_LoadSavedLocations value)? loadSavedLocations,
+    TResult Function(_SaveLocation value)? saveLocation,
+    required TResult orElse(),
+  }) {
+    if (saveLocation != null) {
+      return saveLocation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SaveLocation implements SummaryEvent {
+  const factory _SaveLocation(final LocationMetadataModel locationData) =
+      _$SaveLocationImpl;
+
+  LocationMetadataModel get locationData;
+  @JsonKey(ignore: true)
+  _$$SaveLocationImplCopyWith<_$SaveLocationImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$SummaryState {
-  ResultState<WeatherConditionsModel> get fetchCurrentLocationWeather =>
+  ResultState<WeatherConditionsModel> get fetchCurrentLocationWeatherResult =>
+      throw _privateConstructorUsedError;
+  ResultState<List<LocationMetadataModel>> get loadSavedLocationsResult =>
+      throw _privateConstructorUsedError;
+  ResultState<bool> get saveLocationResult =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -181,10 +494,16 @@ abstract class $SummaryStateCopyWith<$Res> {
           SummaryState value, $Res Function(SummaryState) then) =
       _$SummaryStateCopyWithImpl<$Res, SummaryState>;
   @useResult
-  $Res call({ResultState<WeatherConditionsModel> fetchCurrentLocationWeather});
+  $Res call(
+      {ResultState<WeatherConditionsModel> fetchCurrentLocationWeatherResult,
+      ResultState<List<LocationMetadataModel>> loadSavedLocationsResult,
+      ResultState<bool> saveLocationResult});
 
   $ResultStateCopyWith<WeatherConditionsModel, $Res>
-      get fetchCurrentLocationWeather;
+      get fetchCurrentLocationWeatherResult;
+  $ResultStateCopyWith<List<LocationMetadataModel>, $Res>
+      get loadSavedLocationsResult;
+  $ResultStateCopyWith<bool, $Res> get saveLocationResult;
 }
 
 /// @nodoc
@@ -200,23 +519,53 @@ class _$SummaryStateCopyWithImpl<$Res, $Val extends SummaryState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? fetchCurrentLocationWeather = null,
+    Object? fetchCurrentLocationWeatherResult = null,
+    Object? loadSavedLocationsResult = null,
+    Object? saveLocationResult = null,
   }) {
     return _then(_value.copyWith(
-      fetchCurrentLocationWeather: null == fetchCurrentLocationWeather
-          ? _value.fetchCurrentLocationWeather
-          : fetchCurrentLocationWeather // ignore: cast_nullable_to_non_nullable
+      fetchCurrentLocationWeatherResult: null ==
+              fetchCurrentLocationWeatherResult
+          ? _value.fetchCurrentLocationWeatherResult
+          : fetchCurrentLocationWeatherResult // ignore: cast_nullable_to_non_nullable
               as ResultState<WeatherConditionsModel>,
+      loadSavedLocationsResult: null == loadSavedLocationsResult
+          ? _value.loadSavedLocationsResult
+          : loadSavedLocationsResult // ignore: cast_nullable_to_non_nullable
+              as ResultState<List<LocationMetadataModel>>,
+      saveLocationResult: null == saveLocationResult
+          ? _value.saveLocationResult
+          : saveLocationResult // ignore: cast_nullable_to_non_nullable
+              as ResultState<bool>,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
   $ResultStateCopyWith<WeatherConditionsModel, $Res>
-      get fetchCurrentLocationWeather {
+      get fetchCurrentLocationWeatherResult {
     return $ResultStateCopyWith<WeatherConditionsModel, $Res>(
-        _value.fetchCurrentLocationWeather, (value) {
-      return _then(_value.copyWith(fetchCurrentLocationWeather: value) as $Val);
+        _value.fetchCurrentLocationWeatherResult, (value) {
+      return _then(
+          _value.copyWith(fetchCurrentLocationWeatherResult: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ResultStateCopyWith<List<LocationMetadataModel>, $Res>
+      get loadSavedLocationsResult {
+    return $ResultStateCopyWith<List<LocationMetadataModel>, $Res>(
+        _value.loadSavedLocationsResult, (value) {
+      return _then(_value.copyWith(loadSavedLocationsResult: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ResultStateCopyWith<bool, $Res> get saveLocationResult {
+    return $ResultStateCopyWith<bool, $Res>(_value.saveLocationResult, (value) {
+      return _then(_value.copyWith(saveLocationResult: value) as $Val);
     });
   }
 }
@@ -229,11 +578,19 @@ abstract class _$$SummaryStateImplCopyWith<$Res>
       __$$SummaryStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ResultState<WeatherConditionsModel> fetchCurrentLocationWeather});
+  $Res call(
+      {ResultState<WeatherConditionsModel> fetchCurrentLocationWeatherResult,
+      ResultState<List<LocationMetadataModel>> loadSavedLocationsResult,
+      ResultState<bool> saveLocationResult});
 
   @override
   $ResultStateCopyWith<WeatherConditionsModel, $Res>
-      get fetchCurrentLocationWeather;
+      get fetchCurrentLocationWeatherResult;
+  @override
+  $ResultStateCopyWith<List<LocationMetadataModel>, $Res>
+      get loadSavedLocationsResult;
+  @override
+  $ResultStateCopyWith<bool, $Res> get saveLocationResult;
 }
 
 /// @nodoc
@@ -247,30 +604,61 @@ class __$$SummaryStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? fetchCurrentLocationWeather = null,
+    Object? fetchCurrentLocationWeatherResult = null,
+    Object? loadSavedLocationsResult = null,
+    Object? saveLocationResult = null,
   }) {
     return _then(_$SummaryStateImpl(
-      fetchCurrentLocationWeather: null == fetchCurrentLocationWeather
-          ? _value.fetchCurrentLocationWeather
-          : fetchCurrentLocationWeather // ignore: cast_nullable_to_non_nullable
+      fetchCurrentLocationWeatherResult: null ==
+              fetchCurrentLocationWeatherResult
+          ? _value.fetchCurrentLocationWeatherResult
+          : fetchCurrentLocationWeatherResult // ignore: cast_nullable_to_non_nullable
               as ResultState<WeatherConditionsModel>,
+      loadSavedLocationsResult: null == loadSavedLocationsResult
+          ? _value.loadSavedLocationsResult
+          : loadSavedLocationsResult // ignore: cast_nullable_to_non_nullable
+              as ResultState<List<LocationMetadataModel>>,
+      saveLocationResult: null == saveLocationResult
+          ? _value.saveLocationResult
+          : saveLocationResult // ignore: cast_nullable_to_non_nullable
+              as ResultState<bool>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$SummaryStateImpl implements _SummaryState {
+class _$SummaryStateImpl with DiagnosticableTreeMixin implements _SummaryState {
   const _$SummaryStateImpl(
-      {this.fetchCurrentLocationWeather = const Loading()});
+      {this.fetchCurrentLocationWeatherResult = const Loading(),
+      this.loadSavedLocationsResult = const Initial(),
+      this.saveLocationResult = const Initial()});
 
   @override
   @JsonKey()
-  final ResultState<WeatherConditionsModel> fetchCurrentLocationWeather;
+  final ResultState<WeatherConditionsModel> fetchCurrentLocationWeatherResult;
+  @override
+  @JsonKey()
+  final ResultState<List<LocationMetadataModel>> loadSavedLocationsResult;
+  @override
+  @JsonKey()
+  final ResultState<bool> saveLocationResult;
 
   @override
-  String toString() {
-    return 'SummaryState(fetchCurrentLocationWeather: $fetchCurrentLocationWeather)';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SummaryState(fetchCurrentLocationWeatherResult: $fetchCurrentLocationWeatherResult, loadSavedLocationsResult: $loadSavedLocationsResult, saveLocationResult: $saveLocationResult)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SummaryState'))
+      ..add(DiagnosticsProperty('fetchCurrentLocationWeatherResult',
+          fetchCurrentLocationWeatherResult))
+      ..add(DiagnosticsProperty(
+          'loadSavedLocationsResult', loadSavedLocationsResult))
+      ..add(DiagnosticsProperty('saveLocationResult', saveLocationResult));
   }
 
   @override
@@ -278,14 +666,23 @@ class _$SummaryStateImpl implements _SummaryState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SummaryStateImpl &&
-            (identical(other.fetchCurrentLocationWeather,
-                    fetchCurrentLocationWeather) ||
-                other.fetchCurrentLocationWeather ==
-                    fetchCurrentLocationWeather));
+            (identical(other.fetchCurrentLocationWeatherResult,
+                    fetchCurrentLocationWeatherResult) ||
+                other.fetchCurrentLocationWeatherResult ==
+                    fetchCurrentLocationWeatherResult) &&
+            (identical(
+                    other.loadSavedLocationsResult, loadSavedLocationsResult) ||
+                other.loadSavedLocationsResult == loadSavedLocationsResult) &&
+            (identical(other.saveLocationResult, saveLocationResult) ||
+                other.saveLocationResult == saveLocationResult));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, fetchCurrentLocationWeather);
+  int get hashCode => Object.hash(
+      runtimeType,
+      fetchCurrentLocationWeatherResult,
+      loadSavedLocationsResult,
+      saveLocationResult);
 
   @JsonKey(ignore: true)
   @override
@@ -297,10 +694,16 @@ class _$SummaryStateImpl implements _SummaryState {
 abstract class _SummaryState implements SummaryState {
   const factory _SummaryState(
       {final ResultState<WeatherConditionsModel>
-          fetchCurrentLocationWeather}) = _$SummaryStateImpl;
+          fetchCurrentLocationWeatherResult,
+      final ResultState<List<LocationMetadataModel>> loadSavedLocationsResult,
+      final ResultState<bool> saveLocationResult}) = _$SummaryStateImpl;
 
   @override
-  ResultState<WeatherConditionsModel> get fetchCurrentLocationWeather;
+  ResultState<WeatherConditionsModel> get fetchCurrentLocationWeatherResult;
+  @override
+  ResultState<List<LocationMetadataModel>> get loadSavedLocationsResult;
+  @override
+  ResultState<bool> get saveLocationResult;
   @override
   @JsonKey(ignore: true)
   _$$SummaryStateImplCopyWith<_$SummaryStateImpl> get copyWith =>

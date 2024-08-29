@@ -14,7 +14,7 @@ class SummaryPage extends StatelessWidget {
     return BlocBuilder<SummaryBloc, SummaryState>(
       bloc: getIt<SummaryBloc>(),
       builder: (context, state) {
-        return state.fetchCurrentLocationWeather.maybeWhen(
+        return state.fetchCurrentLocationWeatherResult.maybeWhen(
           data: (data) {
             return RefreshIndicator(
               onRefresh: () async {

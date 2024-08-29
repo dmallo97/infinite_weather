@@ -32,12 +32,12 @@ import '../../features/location/domain/usecases/get_location_weather_usecase.dar
 import '../../features/location/domain/usecases/get_locations_usecase.dart'
     as _i13;
 import '../../features/location/presentation/bloc/location_details_bloc.dart'
-    as _i18;
+    as _i17;
 import '../../features/location/presentation/bloc/locations_list_bloc.dart'
     as _i14;
 import '../../features/summary/domain/usecases/get_current_weather_usecase.dart'
     as _i15;
-import '../../features/summary/presentation/bloc/summary_bloc.dart' as _i17;
+import '../../features/summary/presentation/bloc/summary_bloc.dart' as _i18;
 import 'register_module.dart' as _i19;
 
 extension GetItInjectableX on _i1.GetIt {
@@ -83,10 +83,12 @@ extension GetItInjectableX on _i1.GetIt {
         _i15.GetCurrentWeatherUseCase(gh<_i11.LocationWeatherRepository>()));
     gh.factory<_i16.GetLocationWeatherUseCase>(() =>
         _i16.GetLocationWeatherUseCase(gh<_i11.LocationWeatherRepository>()));
-    gh.singleton<_i17.SummaryBloc>(
-        () => _i17.SummaryBloc(gh<_i15.GetCurrentWeatherUseCase>()));
-    gh.factory<_i18.LocationDetailsBloc>(
-        () => _i18.LocationDetailsBloc(gh<_i16.GetLocationWeatherUseCase>()));
+    gh.factory<_i17.LocationDetailsBloc>(
+        () => _i17.LocationDetailsBloc(gh<_i16.GetLocationWeatherUseCase>()));
+    gh.singleton<_i18.SummaryBloc>(() => _i18.SummaryBloc(
+          gh<_i15.GetCurrentWeatherUseCase>(),
+          gh<_i3.SharedPreferences>(),
+        ));
     return this;
   }
 }

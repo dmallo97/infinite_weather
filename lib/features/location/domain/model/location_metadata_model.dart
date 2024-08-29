@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'location_metadata_model.freezed.dart';
+part 'location_metadata_model.g.dart';
 
 @freezed
 class LocationMetadataModel with _$LocationMetadataModel {
@@ -16,4 +17,6 @@ class LocationMetadataModel with _$LocationMetadataModel {
     required double latitude,
     required double longitude,
   }) = _LocationMetadataModel;
+
+  factory LocationMetadataModel.fromJson(Map<String, dynamic> json) => _$LocationMetadataModelFromJson(json);
 }

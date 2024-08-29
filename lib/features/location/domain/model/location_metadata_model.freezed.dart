@@ -14,6 +14,11 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
+LocationMetadataModel _$LocationMetadataModelFromJson(
+    Map<String, dynamic> json) {
+  return _LocationMetadataModel.fromJson(json);
+}
+
 /// @nodoc
 mixin _$LocationMetadataModel {
   String get key => throw _privateConstructorUsedError;
@@ -27,6 +32,7 @@ mixin _$LocationMetadataModel {
   double get latitude => throw _privateConstructorUsedError;
   double get longitude => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $LocationMetadataModelCopyWith<LocationMetadataModel> get copyWith =>
       throw _privateConstructorUsedError;
@@ -212,7 +218,7 @@ class __$$LocationMetadataModelImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$LocationMetadataModelImpl implements _LocationMetadataModel {
   const _$LocationMetadataModelImpl(
       {required this.key,
@@ -225,6 +231,9 @@ class _$LocationMetadataModelImpl implements _LocationMetadataModel {
       required this.timezoneOffset,
       required this.latitude,
       required this.longitude});
+
+  factory _$LocationMetadataModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LocationMetadataModelImplFromJson(json);
 
   @override
   final String key;
@@ -273,6 +282,7 @@ class _$LocationMetadataModelImpl implements _LocationMetadataModel {
                 other.longitude == longitude));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, key, name, type, rank, region,
       country, adminArea, timezoneOffset, latitude, longitude);
@@ -283,6 +293,13 @@ class _$LocationMetadataModelImpl implements _LocationMetadataModel {
   _$$LocationMetadataModelImplCopyWith<_$LocationMetadataModelImpl>
       get copyWith => __$$LocationMetadataModelImplCopyWithImpl<
           _$LocationMetadataModelImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LocationMetadataModelImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class _LocationMetadataModel implements LocationMetadataModel {
@@ -297,6 +314,9 @@ abstract class _LocationMetadataModel implements LocationMetadataModel {
       required final num timezoneOffset,
       required final double latitude,
       required final double longitude}) = _$LocationMetadataModelImpl;
+
+  factory _LocationMetadataModel.fromJson(Map<String, dynamic> json) =
+      _$LocationMetadataModelImpl.fromJson;
 
   @override
   String get key;
