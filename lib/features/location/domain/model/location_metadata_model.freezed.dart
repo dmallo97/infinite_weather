@@ -23,7 +23,7 @@ mixin _$LocationMetadataModel {
   String get region => throw _privateConstructorUsedError;
   String get country => throw _privateConstructorUsedError;
   String get adminArea => throw _privateConstructorUsedError;
-  String get timezone => throw _privateConstructorUsedError;
+  num get timezoneOffset => throw _privateConstructorUsedError;
   double get latitude => throw _privateConstructorUsedError;
   double get longitude => throw _privateConstructorUsedError;
 
@@ -46,7 +46,7 @@ abstract class $LocationMetadataModelCopyWith<$Res> {
       String region,
       String country,
       String adminArea,
-      String timezone,
+      num timezoneOffset,
       double latitude,
       double longitude});
 }
@@ -72,7 +72,7 @@ class _$LocationMetadataModelCopyWithImpl<$Res,
     Object? region = null,
     Object? country = null,
     Object? adminArea = null,
-    Object? timezone = null,
+    Object? timezoneOffset = null,
     Object? latitude = null,
     Object? longitude = null,
   }) {
@@ -105,10 +105,10 @@ class _$LocationMetadataModelCopyWithImpl<$Res,
           ? _value.adminArea
           : adminArea // ignore: cast_nullable_to_non_nullable
               as String,
-      timezone: null == timezone
-          ? _value.timezone
-          : timezone // ignore: cast_nullable_to_non_nullable
-              as String,
+      timezoneOffset: null == timezoneOffset
+          ? _value.timezoneOffset
+          : timezoneOffset // ignore: cast_nullable_to_non_nullable
+              as num,
       latitude: null == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
@@ -138,7 +138,7 @@ abstract class _$$LocationMetadataModelImplCopyWith<$Res>
       String region,
       String country,
       String adminArea,
-      String timezone,
+      num timezoneOffset,
       double latitude,
       double longitude});
 }
@@ -162,7 +162,7 @@ class __$$LocationMetadataModelImplCopyWithImpl<$Res>
     Object? region = null,
     Object? country = null,
     Object? adminArea = null,
-    Object? timezone = null,
+    Object? timezoneOffset = null,
     Object? latitude = null,
     Object? longitude = null,
   }) {
@@ -195,10 +195,10 @@ class __$$LocationMetadataModelImplCopyWithImpl<$Res>
           ? _value.adminArea
           : adminArea // ignore: cast_nullable_to_non_nullable
               as String,
-      timezone: null == timezone
-          ? _value.timezone
-          : timezone // ignore: cast_nullable_to_non_nullable
-              as String,
+      timezoneOffset: null == timezoneOffset
+          ? _value.timezoneOffset
+          : timezoneOffset // ignore: cast_nullable_to_non_nullable
+              as num,
       latitude: null == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
@@ -222,7 +222,7 @@ class _$LocationMetadataModelImpl implements _LocationMetadataModel {
       required this.region,
       required this.country,
       required this.adminArea,
-      required this.timezone,
+      required this.timezoneOffset,
       required this.latitude,
       required this.longitude});
 
@@ -241,7 +241,7 @@ class _$LocationMetadataModelImpl implements _LocationMetadataModel {
   @override
   final String adminArea;
   @override
-  final String timezone;
+  final num timezoneOffset;
   @override
   final double latitude;
   @override
@@ -249,7 +249,7 @@ class _$LocationMetadataModelImpl implements _LocationMetadataModel {
 
   @override
   String toString() {
-    return 'LocationMetadataModel(key: $key, name: $name, type: $type, rank: $rank, region: $region, country: $country, adminArea: $adminArea, timezone: $timezone, latitude: $latitude, longitude: $longitude)';
+    return 'LocationMetadataModel(key: $key, name: $name, type: $type, rank: $rank, region: $region, country: $country, adminArea: $adminArea, timezoneOffset: $timezoneOffset, latitude: $latitude, longitude: $longitude)';
   }
 
   @override
@@ -265,8 +265,8 @@ class _$LocationMetadataModelImpl implements _LocationMetadataModel {
             (identical(other.country, country) || other.country == country) &&
             (identical(other.adminArea, adminArea) ||
                 other.adminArea == adminArea) &&
-            (identical(other.timezone, timezone) ||
-                other.timezone == timezone) &&
+            (identical(other.timezoneOffset, timezoneOffset) ||
+                other.timezoneOffset == timezoneOffset) &&
             (identical(other.latitude, latitude) ||
                 other.latitude == latitude) &&
             (identical(other.longitude, longitude) ||
@@ -275,7 +275,7 @@ class _$LocationMetadataModelImpl implements _LocationMetadataModel {
 
   @override
   int get hashCode => Object.hash(runtimeType, key, name, type, rank, region,
-      country, adminArea, timezone, latitude, longitude);
+      country, adminArea, timezoneOffset, latitude, longitude);
 
   @JsonKey(ignore: true)
   @override
@@ -294,7 +294,7 @@ abstract class _LocationMetadataModel implements LocationMetadataModel {
       required final String region,
       required final String country,
       required final String adminArea,
-      required final String timezone,
+      required final num timezoneOffset,
       required final double latitude,
       required final double longitude}) = _$LocationMetadataModelImpl;
 
@@ -313,7 +313,7 @@ abstract class _LocationMetadataModel implements LocationMetadataModel {
   @override
   String get adminArea;
   @override
-  String get timezone;
+  num get timezoneOffset;
   @override
   double get latitude;
   @override

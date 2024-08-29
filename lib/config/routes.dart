@@ -3,6 +3,9 @@ import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:infinite_weather/core/widgets/nav_bar_container.dart';
 import 'package:infinite_weather/core/widgets/session_wrapper.dart';
+import 'package:infinite_weather/features/location/domain/model/location_metadata_model.dart';
+import 'package:infinite_weather/features/location/presentation/location_details.dart';
+import 'package:infinite_weather/features/location/presentation/locations_list.dart';
 import 'package:infinite_weather/features/summary/presentation/summary_page.dart';
 
 class Routes {
@@ -52,20 +55,15 @@ final routes = <RouteBase>[
                 path: '/locations',
                 name: Routes.locations,
                 pageBuilder: (context, state) {
-                  return const NoTransitionPage(
-                      child: Center(
-                    child: Text('Locations'),
-                  ));
+                  return const NoTransitionPage(child: LocationsList());
                 },
               ),
               GoRoute(
                 path: '/location-details',
                 name: Routes.locationDetails,
                 pageBuilder: (context, state) {
-                  return const NoTransitionPage(
-                      child: Center(
-                    child: Text('Location details'),
-                  ));
+                  final locationData = state.extra as LocationMetadataModel;
+                  return NoTransitionPage(child: LocationDetails(locationData: locationData));
                 },
               ),
             ],

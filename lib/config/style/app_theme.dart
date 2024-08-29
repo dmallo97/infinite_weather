@@ -10,7 +10,7 @@ class InfiniteWeatherLightTheme implements CustomTheme {
         highlight: AppColors.highlight,
         onHighlight: AppColors.onHighlight,
         title: AppColors.lightBlack,
-        body: AppColors.lightGrey,
+        body: AppColors.darkGrey,
       );
 
   @override

@@ -21,20 +21,21 @@ WeatherConditionsResponse _$WeatherConditionsResponseFromJson(
 
 /// @nodoc
 mixin _$WeatherConditionsResponse {
+  String get LocalObservationDateTime => throw _privateConstructorUsedError;
   String get WeatherText => throw _privateConstructorUsedError;
   bool get HasPrecipitation => throw _privateConstructorUsedError;
   bool get IsDayTime => throw _privateConstructorUsedError;
   Map<String, dynamic> get Temperature => throw _privateConstructorUsedError;
-  Map<String, dynamic> get RealFeelTemperature =>
+  Map<String, dynamic>? get RealFeelTemperature =>
       throw _privateConstructorUsedError;
-  int get RelativeHumidity => throw _privateConstructorUsedError;
-  Map<String, dynamic> get DewPoint => throw _privateConstructorUsedError;
-  Map<String, dynamic> get Wind => throw _privateConstructorUsedError;
-  Map<String, dynamic> get WindGust => throw _privateConstructorUsedError;
-  int get UVIndex => throw _privateConstructorUsedError;
-  String get UVIndexText => throw _privateConstructorUsedError;
-  Map<String, dynamic> get Visibility => throw _privateConstructorUsedError;
-  Map<String, dynamic> get PrecipitationSummary =>
+  int? get RelativeHumidity => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get DewPoint => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get Wind => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get WindGust => throw _privateConstructorUsedError;
+  int? get UVIndex => throw _privateConstructorUsedError;
+  String? get UVIndexText => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get Visibility => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get PrecipitationSummary =>
       throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -50,19 +51,20 @@ abstract class $WeatherConditionsResponseCopyWith<$Res> {
       _$WeatherConditionsResponseCopyWithImpl<$Res, WeatherConditionsResponse>;
   @useResult
   $Res call(
-      {String WeatherText,
+      {String LocalObservationDateTime,
+      String WeatherText,
       bool HasPrecipitation,
       bool IsDayTime,
       Map<String, dynamic> Temperature,
-      Map<String, dynamic> RealFeelTemperature,
-      int RelativeHumidity,
-      Map<String, dynamic> DewPoint,
-      Map<String, dynamic> Wind,
-      Map<String, dynamic> WindGust,
-      int UVIndex,
-      String UVIndexText,
-      Map<String, dynamic> Visibility,
-      Map<String, dynamic> PrecipitationSummary});
+      Map<String, dynamic>? RealFeelTemperature,
+      int? RelativeHumidity,
+      Map<String, dynamic>? DewPoint,
+      Map<String, dynamic>? Wind,
+      Map<String, dynamic>? WindGust,
+      int? UVIndex,
+      String? UVIndexText,
+      Map<String, dynamic>? Visibility,
+      Map<String, dynamic>? PrecipitationSummary});
 }
 
 /// @nodoc
@@ -79,21 +81,26 @@ class _$WeatherConditionsResponseCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? LocalObservationDateTime = null,
     Object? WeatherText = null,
     Object? HasPrecipitation = null,
     Object? IsDayTime = null,
     Object? Temperature = null,
-    Object? RealFeelTemperature = null,
-    Object? RelativeHumidity = null,
-    Object? DewPoint = null,
-    Object? Wind = null,
-    Object? WindGust = null,
-    Object? UVIndex = null,
-    Object? UVIndexText = null,
-    Object? Visibility = null,
-    Object? PrecipitationSummary = null,
+    Object? RealFeelTemperature = freezed,
+    Object? RelativeHumidity = freezed,
+    Object? DewPoint = freezed,
+    Object? Wind = freezed,
+    Object? WindGust = freezed,
+    Object? UVIndex = freezed,
+    Object? UVIndexText = freezed,
+    Object? Visibility = freezed,
+    Object? PrecipitationSummary = freezed,
   }) {
     return _then(_value.copyWith(
+      LocalObservationDateTime: null == LocalObservationDateTime
+          ? _value.LocalObservationDateTime
+          : LocalObservationDateTime // ignore: cast_nullable_to_non_nullable
+              as String,
       WeatherText: null == WeatherText
           ? _value.WeatherText
           : WeatherText // ignore: cast_nullable_to_non_nullable
@@ -110,42 +117,42 @@ class _$WeatherConditionsResponseCopyWithImpl<$Res,
           ? _value.Temperature
           : Temperature // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
-      RealFeelTemperature: null == RealFeelTemperature
+      RealFeelTemperature: freezed == RealFeelTemperature
           ? _value.RealFeelTemperature
           : RealFeelTemperature // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-      RelativeHumidity: null == RelativeHumidity
+              as Map<String, dynamic>?,
+      RelativeHumidity: freezed == RelativeHumidity
           ? _value.RelativeHumidity
           : RelativeHumidity // ignore: cast_nullable_to_non_nullable
-              as int,
-      DewPoint: null == DewPoint
+              as int?,
+      DewPoint: freezed == DewPoint
           ? _value.DewPoint
           : DewPoint // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-      Wind: null == Wind
+              as Map<String, dynamic>?,
+      Wind: freezed == Wind
           ? _value.Wind
           : Wind // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-      WindGust: null == WindGust
+              as Map<String, dynamic>?,
+      WindGust: freezed == WindGust
           ? _value.WindGust
           : WindGust // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-      UVIndex: null == UVIndex
+              as Map<String, dynamic>?,
+      UVIndex: freezed == UVIndex
           ? _value.UVIndex
           : UVIndex // ignore: cast_nullable_to_non_nullable
-              as int,
-      UVIndexText: null == UVIndexText
+              as int?,
+      UVIndexText: freezed == UVIndexText
           ? _value.UVIndexText
           : UVIndexText // ignore: cast_nullable_to_non_nullable
-              as String,
-      Visibility: null == Visibility
+              as String?,
+      Visibility: freezed == Visibility
           ? _value.Visibility
           : Visibility // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-      PrecipitationSummary: null == PrecipitationSummary
+              as Map<String, dynamic>?,
+      PrecipitationSummary: freezed == PrecipitationSummary
           ? _value.PrecipitationSummary
           : PrecipitationSummary // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as Map<String, dynamic>?,
     ) as $Val);
   }
 }
@@ -160,19 +167,20 @@ abstract class _$$WeatherConditionsResponseImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String WeatherText,
+      {String LocalObservationDateTime,
+      String WeatherText,
       bool HasPrecipitation,
       bool IsDayTime,
       Map<String, dynamic> Temperature,
-      Map<String, dynamic> RealFeelTemperature,
-      int RelativeHumidity,
-      Map<String, dynamic> DewPoint,
-      Map<String, dynamic> Wind,
-      Map<String, dynamic> WindGust,
-      int UVIndex,
-      String UVIndexText,
-      Map<String, dynamic> Visibility,
-      Map<String, dynamic> PrecipitationSummary});
+      Map<String, dynamic>? RealFeelTemperature,
+      int? RelativeHumidity,
+      Map<String, dynamic>? DewPoint,
+      Map<String, dynamic>? Wind,
+      Map<String, dynamic>? WindGust,
+      int? UVIndex,
+      String? UVIndexText,
+      Map<String, dynamic>? Visibility,
+      Map<String, dynamic>? PrecipitationSummary});
 }
 
 /// @nodoc
@@ -188,21 +196,26 @@ class __$$WeatherConditionsResponseImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? LocalObservationDateTime = null,
     Object? WeatherText = null,
     Object? HasPrecipitation = null,
     Object? IsDayTime = null,
     Object? Temperature = null,
-    Object? RealFeelTemperature = null,
-    Object? RelativeHumidity = null,
-    Object? DewPoint = null,
-    Object? Wind = null,
-    Object? WindGust = null,
-    Object? UVIndex = null,
-    Object? UVIndexText = null,
-    Object? Visibility = null,
-    Object? PrecipitationSummary = null,
+    Object? RealFeelTemperature = freezed,
+    Object? RelativeHumidity = freezed,
+    Object? DewPoint = freezed,
+    Object? Wind = freezed,
+    Object? WindGust = freezed,
+    Object? UVIndex = freezed,
+    Object? UVIndexText = freezed,
+    Object? Visibility = freezed,
+    Object? PrecipitationSummary = freezed,
   }) {
     return _then(_$WeatherConditionsResponseImpl(
+      LocalObservationDateTime: null == LocalObservationDateTime
+          ? _value.LocalObservationDateTime
+          : LocalObservationDateTime // ignore: cast_nullable_to_non_nullable
+              as String,
       WeatherText: null == WeatherText
           ? _value.WeatherText
           : WeatherText // ignore: cast_nullable_to_non_nullable
@@ -219,42 +232,42 @@ class __$$WeatherConditionsResponseImplCopyWithImpl<$Res>
           ? _value._Temperature
           : Temperature // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
-      RealFeelTemperature: null == RealFeelTemperature
+      RealFeelTemperature: freezed == RealFeelTemperature
           ? _value._RealFeelTemperature
           : RealFeelTemperature // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-      RelativeHumidity: null == RelativeHumidity
+              as Map<String, dynamic>?,
+      RelativeHumidity: freezed == RelativeHumidity
           ? _value.RelativeHumidity
           : RelativeHumidity // ignore: cast_nullable_to_non_nullable
-              as int,
-      DewPoint: null == DewPoint
+              as int?,
+      DewPoint: freezed == DewPoint
           ? _value._DewPoint
           : DewPoint // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-      Wind: null == Wind
+              as Map<String, dynamic>?,
+      Wind: freezed == Wind
           ? _value._Wind
           : Wind // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-      WindGust: null == WindGust
+              as Map<String, dynamic>?,
+      WindGust: freezed == WindGust
           ? _value._WindGust
           : WindGust // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-      UVIndex: null == UVIndex
+              as Map<String, dynamic>?,
+      UVIndex: freezed == UVIndex
           ? _value.UVIndex
           : UVIndex // ignore: cast_nullable_to_non_nullable
-              as int,
-      UVIndexText: null == UVIndexText
+              as int?,
+      UVIndexText: freezed == UVIndexText
           ? _value.UVIndexText
           : UVIndexText // ignore: cast_nullable_to_non_nullable
-              as String,
-      Visibility: null == Visibility
+              as String?,
+      Visibility: freezed == Visibility
           ? _value._Visibility
           : Visibility // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-      PrecipitationSummary: null == PrecipitationSummary
+              as Map<String, dynamic>?,
+      PrecipitationSummary: freezed == PrecipitationSummary
           ? _value._PrecipitationSummary
           : PrecipitationSummary // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -263,19 +276,20 @@ class __$$WeatherConditionsResponseImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$WeatherConditionsResponseImpl extends _WeatherConditionsResponse {
   const _$WeatherConditionsResponseImpl(
-      {required this.WeatherText,
+      {required this.LocalObservationDateTime,
+      required this.WeatherText,
       required this.HasPrecipitation,
       required this.IsDayTime,
       required final Map<String, dynamic> Temperature,
-      required final Map<String, dynamic> RealFeelTemperature,
-      required this.RelativeHumidity,
-      required final Map<String, dynamic> DewPoint,
-      required final Map<String, dynamic> Wind,
-      required final Map<String, dynamic> WindGust,
-      required this.UVIndex,
-      required this.UVIndexText,
-      required final Map<String, dynamic> Visibility,
-      required final Map<String, dynamic> PrecipitationSummary})
+      final Map<String, dynamic>? RealFeelTemperature,
+      this.RelativeHumidity,
+      final Map<String, dynamic>? DewPoint,
+      final Map<String, dynamic>? Wind,
+      final Map<String, dynamic>? WindGust,
+      this.UVIndex,
+      this.UVIndexText,
+      final Map<String, dynamic>? Visibility,
+      final Map<String, dynamic>? PrecipitationSummary})
       : _Temperature = Temperature,
         _RealFeelTemperature = RealFeelTemperature,
         _DewPoint = DewPoint,
@@ -288,6 +302,8 @@ class _$WeatherConditionsResponseImpl extends _WeatherConditionsResponse {
   factory _$WeatherConditionsResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$WeatherConditionsResponseImplFromJson(json);
 
+  @override
+  final String LocalObservationDateTime;
   @override
   final String WeatherText;
   @override
@@ -302,65 +318,77 @@ class _$WeatherConditionsResponseImpl extends _WeatherConditionsResponse {
     return EqualUnmodifiableMapView(_Temperature);
   }
 
-  final Map<String, dynamic> _RealFeelTemperature;
+  final Map<String, dynamic>? _RealFeelTemperature;
   @override
-  Map<String, dynamic> get RealFeelTemperature {
+  Map<String, dynamic>? get RealFeelTemperature {
+    final value = _RealFeelTemperature;
+    if (value == null) return null;
     if (_RealFeelTemperature is EqualUnmodifiableMapView)
       return _RealFeelTemperature;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_RealFeelTemperature);
+    return EqualUnmodifiableMapView(value);
   }
 
   @override
-  final int RelativeHumidity;
-  final Map<String, dynamic> _DewPoint;
+  final int? RelativeHumidity;
+  final Map<String, dynamic>? _DewPoint;
   @override
-  Map<String, dynamic> get DewPoint {
+  Map<String, dynamic>? get DewPoint {
+    final value = _DewPoint;
+    if (value == null) return null;
     if (_DewPoint is EqualUnmodifiableMapView) return _DewPoint;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_DewPoint);
+    return EqualUnmodifiableMapView(value);
   }
 
-  final Map<String, dynamic> _Wind;
+  final Map<String, dynamic>? _Wind;
   @override
-  Map<String, dynamic> get Wind {
+  Map<String, dynamic>? get Wind {
+    final value = _Wind;
+    if (value == null) return null;
     if (_Wind is EqualUnmodifiableMapView) return _Wind;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_Wind);
+    return EqualUnmodifiableMapView(value);
   }
 
-  final Map<String, dynamic> _WindGust;
+  final Map<String, dynamic>? _WindGust;
   @override
-  Map<String, dynamic> get WindGust {
+  Map<String, dynamic>? get WindGust {
+    final value = _WindGust;
+    if (value == null) return null;
     if (_WindGust is EqualUnmodifiableMapView) return _WindGust;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_WindGust);
+    return EqualUnmodifiableMapView(value);
   }
 
   @override
-  final int UVIndex;
+  final int? UVIndex;
   @override
-  final String UVIndexText;
-  final Map<String, dynamic> _Visibility;
+  final String? UVIndexText;
+  final Map<String, dynamic>? _Visibility;
   @override
-  Map<String, dynamic> get Visibility {
+  Map<String, dynamic>? get Visibility {
+    final value = _Visibility;
+    if (value == null) return null;
     if (_Visibility is EqualUnmodifiableMapView) return _Visibility;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_Visibility);
+    return EqualUnmodifiableMapView(value);
   }
 
-  final Map<String, dynamic> _PrecipitationSummary;
+  final Map<String, dynamic>? _PrecipitationSummary;
   @override
-  Map<String, dynamic> get PrecipitationSummary {
+  Map<String, dynamic>? get PrecipitationSummary {
+    final value = _PrecipitationSummary;
+    if (value == null) return null;
     if (_PrecipitationSummary is EqualUnmodifiableMapView)
       return _PrecipitationSummary;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_PrecipitationSummary);
+    return EqualUnmodifiableMapView(value);
   }
 
   @override
   String toString() {
-    return 'WeatherConditionsResponse(WeatherText: $WeatherText, HasPrecipitation: $HasPrecipitation, IsDayTime: $IsDayTime, Temperature: $Temperature, RealFeelTemperature: $RealFeelTemperature, RelativeHumidity: $RelativeHumidity, DewPoint: $DewPoint, Wind: $Wind, WindGust: $WindGust, UVIndex: $UVIndex, UVIndexText: $UVIndexText, Visibility: $Visibility, PrecipitationSummary: $PrecipitationSummary)';
+    return 'WeatherConditionsResponse(LocalObservationDateTime: $LocalObservationDateTime, WeatherText: $WeatherText, HasPrecipitation: $HasPrecipitation, IsDayTime: $IsDayTime, Temperature: $Temperature, RealFeelTemperature: $RealFeelTemperature, RelativeHumidity: $RelativeHumidity, DewPoint: $DewPoint, Wind: $Wind, WindGust: $WindGust, UVIndex: $UVIndex, UVIndexText: $UVIndexText, Visibility: $Visibility, PrecipitationSummary: $PrecipitationSummary)';
   }
 
   @override
@@ -368,6 +396,9 @@ class _$WeatherConditionsResponseImpl extends _WeatherConditionsResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WeatherConditionsResponseImpl &&
+            (identical(
+                    other.LocalObservationDateTime, LocalObservationDateTime) ||
+                other.LocalObservationDateTime == LocalObservationDateTime) &&
             (identical(other.WeatherText, WeatherText) ||
                 other.WeatherText == WeatherText) &&
             (identical(other.HasPrecipitation, HasPrecipitation) ||
@@ -396,6 +427,7 @@ class _$WeatherConditionsResponseImpl extends _WeatherConditionsResponse {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      LocalObservationDateTime,
       WeatherText,
       HasPrecipitation,
       IsDayTime,
@@ -427,25 +459,28 @@ class _$WeatherConditionsResponseImpl extends _WeatherConditionsResponse {
 
 abstract class _WeatherConditionsResponse extends WeatherConditionsResponse {
   const factory _WeatherConditionsResponse(
-          {required final String WeatherText,
+          {required final String LocalObservationDateTime,
+          required final String WeatherText,
           required final bool HasPrecipitation,
           required final bool IsDayTime,
           required final Map<String, dynamic> Temperature,
-          required final Map<String, dynamic> RealFeelTemperature,
-          required final int RelativeHumidity,
-          required final Map<String, dynamic> DewPoint,
-          required final Map<String, dynamic> Wind,
-          required final Map<String, dynamic> WindGust,
-          required final int UVIndex,
-          required final String UVIndexText,
-          required final Map<String, dynamic> Visibility,
-          required final Map<String, dynamic> PrecipitationSummary}) =
+          final Map<String, dynamic>? RealFeelTemperature,
+          final int? RelativeHumidity,
+          final Map<String, dynamic>? DewPoint,
+          final Map<String, dynamic>? Wind,
+          final Map<String, dynamic>? WindGust,
+          final int? UVIndex,
+          final String? UVIndexText,
+          final Map<String, dynamic>? Visibility,
+          final Map<String, dynamic>? PrecipitationSummary}) =
       _$WeatherConditionsResponseImpl;
   const _WeatherConditionsResponse._() : super._();
 
   factory _WeatherConditionsResponse.fromJson(Map<String, dynamic> json) =
       _$WeatherConditionsResponseImpl.fromJson;
 
+  @override
+  String get LocalObservationDateTime;
   @override
   String get WeatherText;
   @override
@@ -455,23 +490,23 @@ abstract class _WeatherConditionsResponse extends WeatherConditionsResponse {
   @override
   Map<String, dynamic> get Temperature;
   @override
-  Map<String, dynamic> get RealFeelTemperature;
+  Map<String, dynamic>? get RealFeelTemperature;
   @override
-  int get RelativeHumidity;
+  int? get RelativeHumidity;
   @override
-  Map<String, dynamic> get DewPoint;
+  Map<String, dynamic>? get DewPoint;
   @override
-  Map<String, dynamic> get Wind;
+  Map<String, dynamic>? get Wind;
   @override
-  Map<String, dynamic> get WindGust;
+  Map<String, dynamic>? get WindGust;
   @override
-  int get UVIndex;
+  int? get UVIndex;
   @override
-  String get UVIndexText;
+  String? get UVIndexText;
   @override
-  Map<String, dynamic> get Visibility;
+  Map<String, dynamic>? get Visibility;
   @override
-  Map<String, dynamic> get PrecipitationSummary;
+  Map<String, dynamic>? get PrecipitationSummary;
   @override
   @JsonKey(ignore: true)
   _$$WeatherConditionsResponseImplCopyWith<_$WeatherConditionsResponseImpl>

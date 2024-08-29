@@ -3,15 +3,18 @@ import 'package:infinite_weather/core/exceptions/data_exception.dart';
 import 'package:infinite_weather/features/location/data/service/accuweather_location_service.dart';
 import 'package:infinite_weather/features/location/data/service/accuweather_meteo_service.dart';
 import 'package:infinite_weather/features/location/domain/model/weather_conditions_model.dart';
+import 'package:infinite_weather/features/location/domain/repository/location_repository.dart';
 import 'package:infinite_weather/features/location/domain/repository/location_weather_repository.dart';
 import 'package:injectable/injectable.dart';
 
 @Injectable(as: LocationWeatherRepository)
 class LocationWeatherRepositoryImpl implements LocationWeatherRepository {
   final AccuWeatherLocationService _accuWeatherLocationService;
+  final LocationRepository _locationRepository;
   final AccuWeatherMeteoService _accuWeatherMeteoService;
 
-  LocationWeatherRepositoryImpl(this._accuWeatherLocationService, this._accuWeatherMeteoService);
+  LocationWeatherRepositoryImpl(
+      this._accuWeatherLocationService, this._accuWeatherMeteoService, this._locationRepository);
 
   @override
   Future<WeatherConditionsModel> getCoordinatesWeatherConditions({
@@ -19,9 +22,8 @@ class LocationWeatherRepositoryImpl implements LocationWeatherRepository {
     required double longitude,
   }) async {
     try {
-      final response =
-          await _accuWeatherLocationService.fetchLocationKeyWithCoords(latitudeLongitude: '$latitude,$longitude');
-      final locationMetadata = response.toDomainModel();
+      final locationMetadata = await _locationRepository.getLocationMetadataWithCoords(
+          latitude: latitude.toString(), longitude: longitude.toString());
       final conditionsResponse = await _accuWeatherMeteoService.fetchLocationKeyCurrentConditions(
         locationKey: locationMetadata.key,
         fullDetails: true,
