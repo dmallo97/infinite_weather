@@ -6,6 +6,7 @@ part 'weather_conditions_model.freezed.dart';
 class WeatherConditionsModel with _$WeatherConditionsModel {
   const factory WeatherConditionsModel({
     String? location,
+    required DateTime observationTime,
     required WeatherCondition weatherCondition,
     required String description,
     required bool isDayTime,

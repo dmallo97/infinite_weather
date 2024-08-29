@@ -9,19 +9,20 @@ part 'weather_conditions_response.g.dart';
 class WeatherConditionsResponse with _$WeatherConditionsResponse implements BaseDtoResponse<WeatherConditionsModel> {
   const WeatherConditionsResponse._();
   const factory WeatherConditionsResponse({
+    required String LocalObservationDateTime,
     required String WeatherText,
     required bool HasPrecipitation,
     required bool IsDayTime,
     required Map<String, dynamic> Temperature,
-    required Map<String, dynamic> RealFeelTemperature,
-    required int RelativeHumidity,
-    required Map<String, dynamic> DewPoint,
-    required Map<String, dynamic> Wind,
-    required Map<String, dynamic> WindGust,
-    required int UVIndex,
-    required String UVIndexText,
-    required Map<String, dynamic> Visibility,
-    required Map<String, dynamic> PrecipitationSummary,
+    Map<String, dynamic>? RealFeelTemperature,
+    int? RelativeHumidity,
+    Map<String, dynamic>? DewPoint,
+    Map<String, dynamic>? Wind,
+    Map<String, dynamic>? WindGust,
+    int? UVIndex,
+    String? UVIndexText,
+    Map<String, dynamic>? Visibility,
+    Map<String, dynamic>? PrecipitationSummary,
   }) = _WeatherConditionsResponse;
 
   factory WeatherConditionsResponse.fromJson(Map<String, dynamic> json) => _$WeatherConditionsResponseFromJson(json);
@@ -32,76 +33,77 @@ class WeatherConditionsResponse with _$WeatherConditionsResponse implements Base
       weatherCondition: WeatherText.toWeatherCondition(),
       description: WeatherText,
       temperature: Temperature['Metric']['Value'],
-      feelsLike: RealFeelTemperature['Metric']['Value'],
+      feelsLike: RealFeelTemperature?['Metric']['Value'],
       humidity: RelativeHumidity,
       isDayTime: IsDayTime,
-      windSpeed: Wind['Speed']['Metric']['Value'],
-      windDirection: Wind['Direction']['English'],
-      windGusts: WindGust['Speed']['Metric']['Value'],
+      windSpeed: Wind?['Speed']['Metric']['Value'],
+      windDirection: Wind?['Direction']['English'],
+      windGusts: WindGust?['Speed']['Metric']['Value'],
       uvIndex: UVIndex,
       uvIndexLabel: UVIndexText,
-      visibility: Visibility['Metric']['Value'],
-      rainProbability: PrecipitationSummary['Precipitation']['Metric']['Value'],
+      visibility: Visibility?['Metric']['Value'],
+      rainProbability: PrecipitationSummary?['Precipitation']['Metric']['Value'],
+      observationTime: DateTime.parse(LocalObservationDateTime),
     );
   }
 }
 
 extension on String {
   WeatherCondition toWeatherCondition({bool isDayTime = true}) {
-    switch (this) {
-      case 'Sunny' || 'Mostly Sunny':
+    switch (toLowerCase()) {
+      case 'sunny' || 'mostly sunny':
         return WeatherCondition.clearDay;
-      case 'Partly Sunny' || 'Hazy Sunshine':
+      case 'partly sunny' || 'hazy sunshine':
         return WeatherCondition.partlyCloudyDay;
-      case 'Intermittent Clouds' || 'Mostly Cloudy':
+      case 'intermittent clouds' || 'mostly cloudy':
         if (isDayTime) {
           return WeatherCondition.partlyCloudyDay;
         } else {
           return WeatherCondition.partlyCloudyNight;
         }
-      case 'Cloudy' || 'Dreary (Overcast)':
+      case 'cloudy' || 'dreary (overcast)':
         return WeatherCondition.cloudy;
-      case 'Fog':
+      case 'fog':
         return WeatherCondition.foggy;
-      case 'Showers' || 'Rain':
+      case 'showers' || 'rain':
         return WeatherCondition.rainy;
-      case 'Partly Sunny w/ Showers':
+      case 'partly sunny w/ showers':
         return WeatherCondition.partlyCloudyRainingDay;
-      case 'Mostly Cloudy w/ Showers':
+      case 'mostly cloudy w/ showers':
         if (isDayTime) {
           return WeatherCondition.partlyCloudyRainingDay;
         } else {
           return WeatherCondition.partlyCloudyRainingNight;
         }
-      case 'Flurries' || 'Snow' || 'Sleet' || 'Freezing Rain' || 'Rain and Snow':
+      case 'flurries' || 'snow' || 'sleet' || 'freezing rain' || 'rain and snow':
         return WeatherCondition.snowy;
-      case 'Partly Sunny w/ Flurries':
+      case 'partly sunny w/ flurries':
         return WeatherCondition.partlyCloudySnowingDay;
-      case 'Mostly Cloudy w/ Flurries' || 'Mostly Cloudy w/ Snow':
+      case 'mostly cloudy w/ flurries' || 'mostly cloudy w/ snow':
         if (isDayTime) {
           return WeatherCondition.partlyCloudySnowingDay;
         } else {
           return WeatherCondition.partlyCloudySnowingNight;
         }
-      case 'Ice':
+      case 'ice':
         return WeatherCondition.icy;
-      case 'Windy':
+      case 'windy':
         return WeatherCondition.windy;
-      case 'Clear' || 'Mostly Clear':
+      case 'clear' || 'mostly clear':
         return WeatherCondition.clearNight;
-      case 'Partly Cloudy':
+      case 'partly cloudy':
         return WeatherCondition.partlyCloudyNight;
-      case 'Hazy Moonlight':
+      case 'hazy moonlight':
         return WeatherCondition.partlyCloudyNight;
-      case 'Partly Cloudy w/ Showers':
+      case 'partly cloudy w/ showers':
         return WeatherCondition.partlyCloudyRainingNight;
-      case 'Partly Cloudy w/ T-Storms':
+      case 'partly cloudy w/ t-storms':
         return WeatherCondition.stormyNight;
-      case 'T-Storms':
+      case 't-storms':
         return WeatherCondition.stormy;
-      case 'Partly Sunny w/ T-Storms':
+      case 'partly sunny w/ t-storms':
         return WeatherCondition.stormyDay;
-      case 'Mostly Cloudy w/ T-Storms':
+      case 'mostly cloudy w/ t-storms':
         if (isDayTime) {
           return WeatherCondition.stormyDay;
         } else {

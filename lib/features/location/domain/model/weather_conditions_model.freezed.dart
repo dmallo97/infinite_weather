@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$WeatherConditionsModel {
   String? get location => throw _privateConstructorUsedError;
+  DateTime get observationTime => throw _privateConstructorUsedError;
   WeatherCondition get weatherCondition => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   bool get isDayTime => throw _privateConstructorUsedError;
@@ -44,6 +45,7 @@ abstract class $WeatherConditionsModelCopyWith<$Res> {
   @useResult
   $Res call(
       {String? location,
+      DateTime observationTime,
       WeatherCondition weatherCondition,
       String description,
       bool isDayTime,
@@ -74,6 +76,7 @@ class _$WeatherConditionsModelCopyWithImpl<$Res,
   @override
   $Res call({
     Object? location = freezed,
+    Object? observationTime = null,
     Object? weatherCondition = null,
     Object? description = null,
     Object? isDayTime = null,
@@ -93,6 +96,10 @@ class _$WeatherConditionsModelCopyWithImpl<$Res,
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
               as String?,
+      observationTime: null == observationTime
+          ? _value.observationTime
+          : observationTime // ignore: cast_nullable_to_non_nullable
+              as DateTime,
       weatherCondition: null == weatherCondition
           ? _value.weatherCondition
           : weatherCondition // ignore: cast_nullable_to_non_nullable
@@ -160,6 +167,7 @@ abstract class _$$WeatherConditionsModelImplCopyWith<$Res>
   @useResult
   $Res call(
       {String? location,
+      DateTime observationTime,
       WeatherCondition weatherCondition,
       String description,
       bool isDayTime,
@@ -189,6 +197,7 @@ class __$$WeatherConditionsModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? location = freezed,
+    Object? observationTime = null,
     Object? weatherCondition = null,
     Object? description = null,
     Object? isDayTime = null,
@@ -208,6 +217,10 @@ class __$$WeatherConditionsModelImplCopyWithImpl<$Res>
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
               as String?,
+      observationTime: null == observationTime
+          ? _value.observationTime
+          : observationTime // ignore: cast_nullable_to_non_nullable
+              as DateTime,
       weatherCondition: null == weatherCondition
           ? _value.weatherCondition
           : weatherCondition // ignore: cast_nullable_to_non_nullable
@@ -269,6 +282,7 @@ class __$$WeatherConditionsModelImplCopyWithImpl<$Res>
 class _$WeatherConditionsModelImpl implements _WeatherConditionsModel {
   const _$WeatherConditionsModelImpl(
       {this.location,
+      required this.observationTime,
       required this.weatherCondition,
       required this.description,
       required this.isDayTime,
@@ -285,6 +299,8 @@ class _$WeatherConditionsModelImpl implements _WeatherConditionsModel {
 
   @override
   final String? location;
+  @override
+  final DateTime observationTime;
   @override
   final WeatherCondition weatherCondition;
   @override
@@ -314,7 +330,7 @@ class _$WeatherConditionsModelImpl implements _WeatherConditionsModel {
 
   @override
   String toString() {
-    return 'WeatherConditionsModel(location: $location, weatherCondition: $weatherCondition, description: $description, isDayTime: $isDayTime, temperature: $temperature, feelsLike: $feelsLike, windSpeed: $windSpeed, windGusts: $windGusts, windDirection: $windDirection, uvIndex: $uvIndex, uvIndexLabel: $uvIndexLabel, visibility: $visibility, humidity: $humidity, rainProbability: $rainProbability)';
+    return 'WeatherConditionsModel(location: $location, observationTime: $observationTime, weatherCondition: $weatherCondition, description: $description, isDayTime: $isDayTime, temperature: $temperature, feelsLike: $feelsLike, windSpeed: $windSpeed, windGusts: $windGusts, windDirection: $windDirection, uvIndex: $uvIndex, uvIndexLabel: $uvIndexLabel, visibility: $visibility, humidity: $humidity, rainProbability: $rainProbability)';
   }
 
   @override
@@ -324,6 +340,8 @@ class _$WeatherConditionsModelImpl implements _WeatherConditionsModel {
             other is _$WeatherConditionsModelImpl &&
             (identical(other.location, location) ||
                 other.location == location) &&
+            (identical(other.observationTime, observationTime) ||
+                other.observationTime == observationTime) &&
             (identical(other.weatherCondition, weatherCondition) ||
                 other.weatherCondition == weatherCondition) &&
             (identical(other.description, description) ||
@@ -355,6 +373,7 @@ class _$WeatherConditionsModelImpl implements _WeatherConditionsModel {
   int get hashCode => Object.hash(
       runtimeType,
       location,
+      observationTime,
       weatherCondition,
       description,
       isDayTime,
@@ -380,6 +399,7 @@ class _$WeatherConditionsModelImpl implements _WeatherConditionsModel {
 abstract class _WeatherConditionsModel implements WeatherConditionsModel {
   const factory _WeatherConditionsModel(
       {final String? location,
+      required final DateTime observationTime,
       required final WeatherCondition weatherCondition,
       required final String description,
       required final bool isDayTime,
@@ -396,6 +416,8 @@ abstract class _WeatherConditionsModel implements WeatherConditionsModel {
 
   @override
   String? get location;
+  @override
+  DateTime get observationTime;
   @override
   WeatherCondition get weatherCondition;
   @override

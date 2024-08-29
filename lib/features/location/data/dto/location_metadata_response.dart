@@ -35,7 +35,7 @@ class LocationMetadataResponse with _$LocationMetadataResponse implements BaseDt
       region: Region['EnglishName'],
       country: Country['EnglishName'],
       adminArea: AdministrativeArea['EnglishName'],
-      timezone: TimeZone['Name'],
+      timezoneOffset: TimeZone['GmtOffset'],
       latitude: GeoPosition['Latitude'],
       longitude: GeoPosition['Longitude'],
     );

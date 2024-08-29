@@ -15,6 +15,18 @@ class AppFontStyles {
         fontWeight: FontWeightType.regular.getFontWeight(),
       );
 
+  static TextStyle get getBodyMed => TextStyle(
+        fontFamily: gilroy,
+        fontSize: 12,
+        fontWeight: FontWeightType.medium.getFontWeight(),
+      );
+  
+  static TextStyle get getBodySemiBold => TextStyle(
+        fontFamily: gilroy,
+        fontSize: 12,
+        fontWeight: FontWeightType.semiBold.getFontWeight(),
+      );
+
   static TextStyle get searchBarInactive => TextStyle(
         fontFamily: gilroy,
         fontSize: 16,

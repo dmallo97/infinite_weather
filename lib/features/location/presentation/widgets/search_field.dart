@@ -1,34 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:infinite_weather/config/style/app_colors.dart';
 
-class SearchField extends StatelessWidget {
-  const SearchField(
-      {super.key,
-      required this.onChanged,
-      this.decoration,
-      this.style,
-      required this.hintText,
-      this.controller,
-      this.onSubmitted,
-      this.onTap,
-      this.autoFocus = false});
+class SearchField extends StatefulWidget {
+  const SearchField({
+    super.key,
+    required this.hintText,
+    required this.onSubmitted,
+  });
 
-  final TextEditingController? controller;
-  final Function(String) onChanged;
-  final void Function(String)? onSubmitted;
-  final InputDecoration? decoration;
-  final TextStyle? style;
+  final Function(String) onSubmitted;
   final String hintText;
-  final void Function()? onTap;
-  final bool autoFocus;
+
+  @override
+  State<SearchField> createState() => _SearchFieldState();
+}
+
+class _SearchFieldState extends State<SearchField> {
+  late String searchText;
+
+  @override
+  void initState() {
+    super.initState();
+    searchText = '';
+  }
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
       child: TextField(
-        autofocus: autoFocus,
-        controller: controller,
+        onChanged: (value) {
+          setState(() {
+            searchText = value;
+          });
+        },
         decoration: InputDecoration(
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(17.5),
@@ -51,9 +56,7 @@ class SearchField extends StatelessWidget {
             child: SizedBox(
               height: 30,
               child: FilledButton(
-                onPressed: () {
-                  onSubmitted?.call(controller?.value.text ?? '');
-                },
+                onPressed: searchText.trim().isEmpty ? null : () => widget.onSubmitted.call(searchText),
                 style: FilledButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
                 child: const Text('Go'),
               ),
@@ -71,15 +74,10 @@ class SearchField extends StatelessWidget {
             color: AppColors.lightBlack,
           ),
           hintStyle: const TextStyle(fontSize: 17, color: AppColors.darkGrey, fontWeight: FontWeight.normal),
-          hintText: hintText,
+          hintText: widget.hintText,
         ),
         textInputAction: TextInputAction.search,
         style: const TextStyle(),
-        onChanged: (text) {
-          onChanged(text);
-        },
-        onTap: onTap,
-        onSubmitted: onSubmitted,
       ),
     );
   }
