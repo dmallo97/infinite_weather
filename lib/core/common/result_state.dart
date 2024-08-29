@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:infinite_weather/core/exceptions/custom_exception.dart';
-import 'package:infinite_weather/core/exceptions/domain_exception.dart';
 
 part 'result_state.freezed.dart';
 
