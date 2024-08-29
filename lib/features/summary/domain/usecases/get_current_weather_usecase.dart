@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:geolocator/geolocator.dart';
+import 'package:infinite_weather/core/exceptions/domain_exception.dart';
 import 'package:infinite_weather/features/location/domain/model/weather_conditions_model.dart';
 import 'package:infinite_weather/features/location/domain/repository/location_weather_repository.dart';
 import 'package:injectable/injectable.dart';
@@ -25,19 +26,20 @@ class GetCurrentWeatherUseCase {
 
     serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
-      return Future.error('Location services are disabled.');
+      throw DomainException(type: Error(), message: 'Location services are disabled.');
     }
 
     permission = await Geolocator.checkPermission();
     if (permission == LocationPermission.denied) {
       permission = await Geolocator.requestPermission();
       if (permission == LocationPermission.denied) {
-        return Future.error('Location permissions are denied');
+        throw DomainException(type: Error(), message: 'Location permissions are denied');
       }
     }
 
     if (permission == LocationPermission.deniedForever) {
-      return Future.error('Location permissions are permanently denied, we cannot request permissions.');
+      throw DomainException(
+          type: Error(), message: 'Location permissions are permanently denied, we cannot request permissions.');
     }
     return await Geolocator.getCurrentPosition();
   }

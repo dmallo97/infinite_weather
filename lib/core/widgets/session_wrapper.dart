@@ -48,17 +48,13 @@ class SessionShellMainView extends StatelessWidget {
                       onPressed: () {
                         getIt<ConnectivityCheckBloc>().add(const ConnectivityCheckEvent.checkConnectivity());
                       },
-                      child: Text('Reintentar'),
+                      child: const Text('Reintentar'),
                     ),
                   ),
                   body: SizedBox.expand(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        // Assets.connectivity.noNetworkImage.svg(
-                        //   width: 216.sp,
-                        //   height: 216.sp,
-                        // ),
                         Text(
                           'No tienes conexión a internet',
                           style: AppFontStyles.getTitleBold,

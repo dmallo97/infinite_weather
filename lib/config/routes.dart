@@ -73,15 +73,6 @@ final routes = <RouteBase>[
             NavBarContainer(navigationShell: navigationShell, children: children),
         builder: (context, state, navigationShell) => navigationShell,
       ),
-      // GoRoute(
-      //   parentNavigatorKey: _mainNavigatorKey,
-      //   path: '/location-details',
-      //   name: Routes.locationDetails,
-      //   pageBuilder: (context, state) {
-      //     //state.syncAppBar(context);
-      //     return NoTransitionPage(child: Container());
-      //   },
-      // ),
     ],
   ),
 ];

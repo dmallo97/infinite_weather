@@ -44,23 +44,14 @@ class AppFontStyles {
 
 enum FontWeightType {
   black,
-  //blackItalic,
   extraBold,
-  //extraBoldItalic,
   bold,
-  //boldItalic,
   semiBold,
-  //semiBoldItalic,
   medium,
-  //mediumItalic,
   regular,
-  //regularItalic,
   light,
-  //lightItalic,
   ultraLight,
-  //ultraLightItalic,
   thin;
-  //thinItalic;
 
   FontWeight getFontWeight() {
     switch (this) {

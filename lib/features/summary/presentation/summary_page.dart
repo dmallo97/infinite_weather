@@ -32,7 +32,6 @@ class SummaryPage extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         CurrentConditions(weatherConditions: data),
-                        //SixHourForecastCard(),
                       ],
                     ),
                   ),

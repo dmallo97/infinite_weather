@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:infinite_weather/config/config_params.dart';
 import 'package:infinite_weather/core/common/result_state.dart';
 import 'package:infinite_weather/core/exceptions/domain_exception.dart';
 import 'package:infinite_weather/features/location/domain/model/location_metadata_model.dart';
@@ -25,14 +26,14 @@ class SummaryBloc extends Bloc<SummaryEvent, SummaryState> {
     on<_SaveLocation>(_saveLocation);
     on<_LoadSavedLocations>(_loadSavedLocations);
     add(const _FetchCurrentWeather());
-    add(const _LoadSavedLocations());
+    //add(const _LoadSavedLocations()); TODO
   }
 
   void _saveLocation(_SaveLocation event, Emitter<SummaryState> emitter) async {
-    var savedLocations = _prefs.getStringList('locations');
+    var savedLocations = _prefs.getStringList(ConfigurationParameters.prefsLocationsKey);
     if (savedLocations != null) {
       savedLocations.add(jsonEncode(event.locationData.toJson()));
-      final successfulResult = await _prefs.setStringList('locations', savedLocations);
+      final successfulResult = await _prefs.setStringList(ConfigurationParameters.prefsLocationsKey, savedLocations);
       if (successfulResult) {
         emitter(state.copyWith(saveLocationResult: const Data(data: true)));
         add(const _LoadSavedLocations());
@@ -42,7 +43,7 @@ class SummaryBloc extends Bloc<SummaryEvent, SummaryState> {
     } else {
       savedLocations = [jsonEncode(event.locationData.toJson())];
     }
-    final successfulResult = await _prefs.setStringList('locations', savedLocations);
+    final successfulResult = await _prefs.setStringList(ConfigurationParameters.prefsLocationsKey, savedLocations);
     if (successfulResult) {
       emitter(state.copyWith(saveLocationResult: const Data(data: true)));
       add(const _LoadSavedLocations());
@@ -52,7 +53,7 @@ class SummaryBloc extends Bloc<SummaryEvent, SummaryState> {
   }
 
   void _loadSavedLocations(_LoadSavedLocations event, Emitter<SummaryState> emitter) {
-    final savedLocations = _prefs.getStringList('locations');
+    final savedLocations = _prefs.getStringList(ConfigurationParameters.prefsLocationsKey);
     if (savedLocations == null) return;
     emitter(state.copyWith(
         loadSavedLocationsResult: Data(

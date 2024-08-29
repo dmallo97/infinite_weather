@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:infinite_weather/config/di/injection.dart';
 import 'package:infinite_weather/config/style/app_colors.dart';
@@ -22,7 +20,7 @@ class LocationDetails extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           locationData.name.toUpperCase(),
-          style: TextStyle(fontSize: 18),
+          style: const TextStyle(fontSize: 18),
         ),
       ),
       body: CustomScrollView(
@@ -94,7 +92,7 @@ class LocationDetails extends StatelessWidget {
                               color: Theme.of(context).colorScheme.onPrimary,
                               size: 50,
                             ),
-                            Text(
+                            const Text(
                               'Nothing to show :(',
                               style: TextStyle(fontSize: 16),
                             ),
@@ -134,7 +132,7 @@ class LocationDetails extends StatelessWidget {
               child: UnconstrainedBox(
                 child: FilledButton(
                   onPressed: () {},
-                  child: Text('Save location'),
+                  child: const Text('Save location'),
                 ),
               ),
             ),

@@ -12,7 +12,7 @@ class CurrentConditions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView(
-      physics: NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       padding: const EdgeInsets.symmetric(
         horizontal: 8,
         vertical: 16,
@@ -43,7 +43,7 @@ class CurrentConditions extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(
+                  const Icon(
                     CupertinoIcons.thermometer,
                     size: 50,
                   ),

@@ -152,13 +152,13 @@ class FooterSliver extends StatelessWidget {
                       onPressed: state.currentPage == 1
                           ? null
                           : () => getIt<LocationsListBloc>().add(const LocationsListEvent.previousPage()),
-                      icon: Icon(Icons.chevron_left),
+                      icon: const Icon(Icons.chevron_left),
                     ),
                     IconButton.filled(
                       onPressed: state.itemCount < 25
                           ? null
                           : () => getIt<LocationsListBloc>().add(const LocationsListEvent.nextPage()),
-                      icon: Icon(Icons.chevron_right),
+                      icon: const Icon(Icons.chevron_right),
                     ),
                   ],
                 ),
