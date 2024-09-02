@@ -4,6 +4,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:infinite_weather/config/di/injection.dart';
 import 'package:infinite_weather/config/style/app_styles.dart';
 import 'package:infinite_weather/features/location/domain/model/weather_conditions_model.dart';
+import 'dart:math';
+
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:infinite_weather/config/di/injection.dart';
+import 'package:infinite_weather/features/location/domain/model/location_metadata_model.dart';
 import 'package:infinite_weather/features/summary/presentation/bloc/summary_bloc.dart';
 import 'package:infinite_weather/features/summary/presentation/widgets/weather_icon.dart';
 
@@ -27,6 +34,13 @@ class SummaryPage extends StatelessWidget {
                   SliverAppBar(
                     title: Text(data.location!),
                   ),
+                  // SliverPersistentHeader(
+                  //   delegate: _SliverHeaderDelegate(
+                  //     child: child,
+                  //     locationMetadataModel: null,
+                  //     expandedChild: (BuildContext context) {},
+                  //   ),
+                  // ),
                   SliverFillRemaining(
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -149,5 +163,38 @@ class CurrentConditionCard extends StatelessWidget {
             ],
           ),
     );
+  }
+}
+
+class _SliverHeaderDelegate extends SliverPersistentHeaderDelegate {
+  final double minHeight;
+  final double maxHeight;
+  final LocationMetadataModel locationMetadataModel;
+  final Widget child;
+  final WidgetBuilder expandedChild;
+
+  const _SliverHeaderDelegate({
+    required this.locationMetadataModel,
+    this.minHeight = kToolbarHeight,
+    this.maxHeight = kTextTabBarHeight * 2,
+    required this.child,
+    required this.expandedChild,
+  });
+
+  @override
+  double get maxExtent => max(maxHeight, minHeight);
+
+  @override
+  double get minExtent => minHeight;
+
+  @override
+  bool shouldRebuild(covariant _SliverHeaderDelegate oldDelegate) {
+    return child != oldDelegate.child || minHeight != oldDelegate.minHeight || maxHeight != oldDelegate.maxHeight;
+  }
+
+  @override
+  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+    // TODO: implement build
+    throw UnimplementedError();
   }
 }
